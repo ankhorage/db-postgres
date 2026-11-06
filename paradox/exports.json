@@ -13,8 +13,13 @@
       "line": 7,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["PostgresAdapter", "PostgresAdapterConfig"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "PostgresAdapter",
+      "PostgresAdapterConfig"
+    ],
     "signatures": [
       {
         "label": "(config: PostgresAdapterConfig) => PostgresAdapter",
@@ -47,7 +52,9 @@
       "line": 11,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -67,7 +74,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -95,7 +104,9 @@
       "line": 7,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [

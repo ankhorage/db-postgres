@@ -28,9 +28,9 @@ Source: `src/features/postgres/types.ts:3:1`
 
 ### Members
 
-| Name             | Kind     | Type     | Required | Description |
-| ---------------- | -------- | -------- | -------- | ----------- |
-| connectionString | property | `string` | yes      |             |
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| connectionString | property | `string` | yes |  |
 
 ## PostgresAdapterLifecycle
 
@@ -40,6 +40,6 @@ Source: `src/features/postgres/types.ts:7:1`
 
 ### Members
 
-| Name  | Kind   | Type                  | Required | Description |
-| ----- | ------ | --------------------- | -------- | ----------- |
-| close | method | `() => Promise<void>` | yes      |             |
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| close | method | `() => Promise<void>` | yes |  |

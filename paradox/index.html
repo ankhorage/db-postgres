@@ -7,37 +7,16 @@
     <style>
       :root {
         color-scheme: light;
-        font-family:
-          Inter,
-          ui-sans-serif,
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          'Segoe UI',
-          sans-serif;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background: #f5f7fb;
         color: #11203b;
       }
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        margin: 0;
-      }
-      a {
-        color: #2459d3;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      button {
-        font: inherit;
-      }
-      code,
-      pre {
-        font-family: 'SFMono-Regular', ui-monospace, SFMono-Regular, Menlo, monospace;
-      }
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      a { color: #2459d3; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      button { font: inherit; }
+      code, pre { font-family: "SFMono-Regular", ui-monospace, SFMono-Regular, Menlo, monospace; }
       .layout {
         display: grid;
         grid-template-columns: minmax(16rem, 22rem) minmax(0, 1fr);
@@ -52,11 +31,8 @@
         max-height: 100vh;
         overflow: auto;
       }
-      .content {
-        padding: 2rem;
-      }
-      .panel,
-      .item {
+      .content { padding: 2rem; }
+      .panel, .item {
         background: #ffffff;
         border: 1px solid #d8dfec;
         border-radius: 0.9rem;
@@ -80,15 +56,12 @@
         border: 1px solid #c7d2e5;
         margin: 1rem 0 1.5rem;
       }
-      .nav-list,
-      .meta-list {
+      .nav-list, .meta-list {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-      .nav-list li + li {
-        margin-top: 0.5rem;
-      }
+      .nav-list li + li { margin-top: 0.5rem; }
       .nav-button {
         width: 100%;
         display: block;
@@ -100,8 +73,7 @@
         padding: 0.55rem 0.7rem;
         text-align: left;
       }
-      .nav-button:hover,
-      .nav-button[aria-current='page'] {
+      .nav-button:hover, .nav-button[aria-current="page"] {
         background: #e8eefb;
         text-decoration: none;
       }
@@ -110,19 +82,9 @@
         color: #5e6d8c;
         margin-top: 0.15rem;
       }
-      .view[hidden] {
-        display: none;
-      }
-      .muted {
-        color: #5e6d8c;
-      }
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        padding: 0;
-        list-style: none;
-      }
+      .view[hidden] { display: none; }
+      .muted { color: #5e6d8c; }
+      .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; list-style: none; }
       .chip {
         border-radius: 999px;
         background: #e8eefb;
@@ -130,18 +92,8 @@
         padding: 0.25rem 0.65rem;
         font-size: 0.85rem;
       }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 0.8rem;
-      }
-      th,
-      td {
-        padding: 0.6rem;
-        border-bottom: 1px solid #e2e7f2;
-        text-align: left;
-        vertical-align: top;
-      }
+      table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; }
+      th, td { padding: 0.6rem; border-bottom: 1px solid #e2e7f2; text-align: left; vertical-align: top; }
       pre {
         overflow: auto;
         border-radius: 0.75rem;
@@ -149,34 +101,13 @@
         color: #e7edf7;
         padding: 1rem;
       }
-      .empty {
-        font-style: italic;
-        color: #6f7f9c;
-      }
-      .mermaid {
-        margin: 1rem 0;
-        overflow: auto;
-      }
-      details > summary {
-        cursor: pointer;
-        color: #5e6d8c;
-        font-size: 0.9rem;
-        margin-top: 0.5rem;
-        user-select: none;
-      }
+      .empty { font-style: italic; color: #6f7f9c; }
+      .mermaid { margin: 1rem 0; overflow: auto; }
+      details > summary { cursor: pointer; color: #5e6d8c; font-size: 0.9rem; margin-top: 0.5rem; user-select: none; }
       @media (max-width: 900px) {
-        .layout {
-          grid-template-columns: 1fr;
-        }
-        .sidebar {
-          position: static;
-          max-height: none;
-          border-right: 0;
-          border-bottom: 1px solid #d8dfec;
-        }
-        .content {
-          padding: 1rem;
-        }
+        .layout { grid-template-columns: 1fr; }
+        .sidebar { position: static; max-height: none; border-right: 0; border-bottom: 1px solid #d8dfec; }
+        .content { padding: 1rem; }
       }
     </style>
   </head>
@@ -196,670 +127,371 @@
               </button>
             </li>
             <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/adapters/PostgresDbAdapter.ts"
-              >
-                src/features/postgres/adapters/PostgresDbAdapter.ts
-                <small>3 functions</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/createPostgresAdapter.ts"
-              >
-                src/features/postgres/createPostgresAdapter.ts
-                <small>1 function</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/queries/buildPostgresDeleteQuery.ts"
-              >
-                src/features/postgres/queries/buildPostgresDeleteQuery.ts
-                <small>1 function</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/queries/buildPostgresFindByIdQuery.ts"
-              >
-                src/features/postgres/queries/buildPostgresFindByIdQuery.ts
-                <small>1 function</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/queries/buildPostgresInsertQuery.ts"
-              >
-                src/features/postgres/queries/buildPostgresInsertQuery.ts
-                <small>4 functions</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/queries/buildPostgresSelectQuery.ts"
-              >
-                src/features/postgres/queries/buildPostgresSelectQuery.ts
-                <small>3 functions</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/queries/buildPostgresUpdateQuery.ts"
-              >
-                src/features/postgres/queries/buildPostgresUpdateQuery.ts
-                <small>1 function</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"
-              >
-                src/features/postgres/schema/buildPostgresCreateCollectionSql.ts
-                <small>4 functions</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts"
-              >
-                src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts
-                <small>1 function</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/utils/buildPostgresFilters.ts"
-              >
-                src/features/postgres/utils/buildPostgresFilters.ts
-                <small>5 functions</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/utils/toPostgresAdapterError.ts"
-              >
-                src/features/postgres/utils/toPostgresAdapterError.ts
-                <small>1 function</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/utils/toPostgresTableName.ts"
-              >
-                src/features/postgres/utils/toPostgresTableName.ts
-                <small>1 function</small>
-              </button>
-            </li>
-            <li>
-              <button
-                class="nav-button"
-                type="button"
-                data-target="src/features/postgres/utils/validatePostgresIdentifier.ts"
-              >
-                src/features/postgres/utils/validatePostgresIdentifier.ts
-                <small>1 function</small>
-              </button>
-            </li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/adapters/PostgresDbAdapter.ts">
+      src/features/postgres/adapters/PostgresDbAdapter.ts
+      <small>3 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/createPostgresAdapter.ts">
+      src/features/postgres/createPostgresAdapter.ts
+      <small>1 function</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/queries/buildPostgresDeleteQuery.ts">
+      src/features/postgres/queries/buildPostgresDeleteQuery.ts
+      <small>1 function</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/queries/buildPostgresFindByIdQuery.ts">
+      src/features/postgres/queries/buildPostgresFindByIdQuery.ts
+      <small>1 function</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/queries/buildPostgresInsertQuery.ts">
+      src/features/postgres/queries/buildPostgresInsertQuery.ts
+      <small>4 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/queries/buildPostgresSelectQuery.ts">
+      src/features/postgres/queries/buildPostgresSelectQuery.ts
+      <small>3 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/queries/buildPostgresUpdateQuery.ts">
+      src/features/postgres/queries/buildPostgresUpdateQuery.ts
+      <small>1 function</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/schema/buildPostgresCreateCollectionSql.ts">
+      src/features/postgres/schema/buildPostgresCreateCollectionSql.ts
+      <small>4 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts">
+      src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts
+      <small>1 function</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/utils/buildPostgresFilters.ts">
+      src/features/postgres/utils/buildPostgresFilters.ts
+      <small>5 functions</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/utils/toPostgresAdapterError.ts">
+      src/features/postgres/utils/toPostgresAdapterError.ts
+      <small>1 function</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/utils/toPostgresTableName.ts">
+      src/features/postgres/utils/toPostgresTableName.ts
+      <small>1 function</small>
+    </button>
+  </li><li>
+    <button class="nav-button" type="button" data-target="src/features/postgres/utils/validatePostgresIdentifier.ts">
+      src/features/postgres/utils/validatePostgresIdentifier.ts
+      <small>1 function</small>
+    </button>
+  </li>
           </ul>
         </nav>
       </aside>
       <main class="content">
         <section id="view-home" class="view" data-view="home">
-          <section class="panel">
-            <h2>Package overview</h2>
-            <div class="summary">
-              <div><strong>4</strong><span class="muted">public exports</span></div>
-              <div><strong>0</strong><span class="muted">components</span></div>
-              <div><strong>19</strong><span class="muted">modules</span></div>
-              <div><strong>1</strong><span class="muted">entrypoints</span></div>
-            </div>
-            <h3>Entrypoints</h3>
-            <ul class="meta-list">
-              <li><code>src/index.ts</code></li>
-            </ul>
-          </section>
-
-          <section class="panel">
-            <h2>Policy</h2>
-            <p>No documentation findings.</p>
-          </section>
-          <section class="panel">
-            <h2>Modules</h2>
-            <article
-              class="item"
-              data-search="src/features/postgres/adapters/ports.ts PostgresClientPort PostgresPoolPort PostgresQueryPort"
-            >
-              <h3>src/features/postgres/adapters/ports.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-              <p>
-                <strong>Exports:</strong> <code>PostgresClientPort</code>,
-                <code>PostgresPoolPort</code>, <code>PostgresQueryPort</code>
-              </p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/adapters/PostgresDbAdapter.ts src/features/postgres/adapters/ports.ts src/features/postgres/queries/buildPostgresDeleteQuery.ts src/features/postgres/queries/buildPostgresFindByIdQuery.ts src/features/postgres/queries/buildPostgresInsertQuery.ts src/features/postgres/queries/buildPostgresSelectQuery.ts src/features/postgres/queries/buildPostgresUpdateQuery.ts src/features/postgres/schema/buildPostgresCreateCollectionSql.ts src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts src/features/postgres/types.ts src/features/postgres/utils/toPostgresAdapterError.ts PostgresDbAdapter"
-            >
-              <h3>src/features/postgres/adapters/PostgresDbAdapter.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong> <code>src/features/postgres/adapters/ports.ts</code>,
-                <code>src/features/postgres/queries/buildPostgresDeleteQuery.ts</code>,
-                <code>src/features/postgres/queries/buildPostgresFindByIdQuery.ts</code>,
-                <code>src/features/postgres/queries/buildPostgresInsertQuery.ts</code>,
-                <code>src/features/postgres/queries/buildPostgresSelectQuery.ts</code>,
-                <code>src/features/postgres/queries/buildPostgresUpdateQuery.ts</code>,
-                <code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts</code>,
-                <code>src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts</code>,
-                <code>src/features/postgres/types.ts</code>,
-                <code>src/features/postgres/utils/toPostgresAdapterError.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>PostgresDbAdapter</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/createPostgresAdapter.ts src/features/postgres/adapters/PostgresDbAdapter.ts src/features/postgres/types.ts createPostgresAdapter"
-            >
-              <h3>src/features/postgres/createPostgresAdapter.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong>
-                <code>src/features/postgres/adapters/PostgresDbAdapter.ts</code>,
-                <code>src/features/postgres/types.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>createPostgresAdapter</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/queries/buildPostgresDeleteQuery.ts src/features/postgres/queries/types.ts src/features/postgres/utils/buildPostgresFilters.ts src/features/postgres/utils/toPostgresTableName.ts buildPostgresDeleteQuery"
-            >
-              <h3>src/features/postgres/queries/buildPostgresDeleteQuery.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong> <code>src/features/postgres/queries/types.ts</code>,
-                <code>src/features/postgres/utils/buildPostgresFilters.ts</code>,
-                <code>src/features/postgres/utils/toPostgresTableName.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>buildPostgresDeleteQuery</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/queries/buildPostgresFindByIdQuery.ts src/features/postgres/queries/buildPostgresSelectQuery.ts src/features/postgres/queries/types.ts buildPostgresFindByIdQuery"
-            >
-              <h3>src/features/postgres/queries/buildPostgresFindByIdQuery.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong>
-                <code>src/features/postgres/queries/buildPostgresSelectQuery.ts</code>,
-                <code>src/features/postgres/queries/types.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>buildPostgresFindByIdQuery</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/queries/buildPostgresInsertQuery.ts src/features/postgres/queries/types.ts src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresInsertQuery"
-            >
-              <h3>src/features/postgres/queries/buildPostgresInsertQuery.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong> <code>src/features/postgres/queries/types.ts</code>,
-                <code>src/features/postgres/utils/toPostgresTableName.ts</code>,
-                <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>buildPostgresInsertQuery</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/queries/buildPostgresSelectQuery.ts src/features/postgres/queries/types.ts src/features/postgres/utils/buildPostgresFilters.ts src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresSelectQuery"
-            >
-              <h3>src/features/postgres/queries/buildPostgresSelectQuery.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong> <code>src/features/postgres/queries/types.ts</code>,
-                <code>src/features/postgres/utils/buildPostgresFilters.ts</code>,
-                <code>src/features/postgres/utils/toPostgresTableName.ts</code>,
-                <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>buildPostgresSelectQuery</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/queries/buildPostgresUpdateQuery.ts src/features/postgres/queries/types.ts src/features/postgres/utils/buildPostgresFilters.ts src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresUpdateQuery"
-            >
-              <h3>src/features/postgres/queries/buildPostgresUpdateQuery.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong> <code>src/features/postgres/queries/types.ts</code>,
-                <code>src/features/postgres/utils/buildPostgresFilters.ts</code>,
-                <code>src/features/postgres/utils/toPostgresTableName.ts</code>,
-                <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>buildPostgresUpdateQuery</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/queries/types.ts PostgresQuery"
-            >
-              <h3>src/features/postgres/queries/types.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-              <p><strong>Exports:</strong> <code>PostgresQuery</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/schema/buildPostgresCreateCollectionSql.ts src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresCreateCollectionSql"
-            >
-              <h3>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong>
-                <code>src/features/postgres/utils/toPostgresTableName.ts</code>,
-                <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>buildPostgresCreateCollectionSql</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts src/features/postgres/utils/toPostgresTableName.ts buildPostgresDeleteCollectionSql"
-            >
-              <h3>src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong>
-                <code>src/features/postgres/utils/toPostgresTableName.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>buildPostgresDeleteCollectionSql</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/types.ts PostgresAdapter PostgresAdapterConfig PostgresAdapterLifecycle"
-            >
-              <h3>src/features/postgres/types.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-              <p>
-                <strong>Exports:</strong> <code>PostgresAdapter</code>,
-                <code>PostgresAdapterConfig</code>, <code>PostgresAdapterLifecycle</code>
-              </p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/utils/buildPostgresFilters.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresFilters"
-            >
-              <h3>src/features/postgres/utils/buildPostgresFilters.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong>
-                <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>buildPostgresFilters</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/utils/toPostgresAdapterError.ts toPostgresAdapterError"
-            >
-              <h3>src/features/postgres/utils/toPostgresAdapterError.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-              <p><strong>Exports:</strong> <code>toPostgresAdapterError</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts toPostgresTableName"
-            >
-              <h3>src/features/postgres/utils/toPostgresTableName.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong>
-                <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <code>toPostgresTableName</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/features/postgres/utils/validatePostgresIdentifier.ts validatePostgresIdentifier"
-            >
-              <h3>src/features/postgres/utils/validatePostgresIdentifier.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-              <p><strong>Exports:</strong> <code>validatePostgresIdentifier</code></p>
-            </article>
-            <article
-              class="item"
-              data-search="src/index.ts createPostgresAdapter PostgresAdapter PostgresAdapterConfig PostgresAdapterLifecycle"
-            >
-              <h3>src/index.ts</h3>
-              <p class="muted">Configured entrypoint</p>
-              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
-              <p>
-                <strong>Exports:</strong> <code>createPostgresAdapter</code>,
-                <code>PostgresAdapter</code>, <code>PostgresAdapterConfig</code>,
-                <code>PostgresAdapterLifecycle</code>
-              </p>
-            </article>
-            <article
-              class="item"
-              data-search="test/index.test.ts src/features/postgres/adapters/ports.ts src/features/postgres/adapters/PostgresDbAdapter.ts src/index.ts"
-            >
-              <h3>test/index.test.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p>
-                <strong>Dependencies:</strong> <code>src/features/postgres/adapters/ports.ts</code>,
-                <code>src/features/postgres/adapters/PostgresDbAdapter.ts</code>,
-                <code>src/index.ts</code>
-              </p>
-              <p><strong>Exports:</strong> <span class="empty">None</span></p>
-            </article>
-            <article class="item" data-search="test/postgres.integration.test.ts src/index.ts">
-              <h3>test/postgres.integration.test.ts</h3>
-              <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <code>src/index.ts</code></p>
-              <p><strong>Exports:</strong> <span class="empty">None</span></p>
-            </article>
-          </section>
-          <section class="panel">
-            <h2>Public API</h2>
-
+          
+    <section class="panel">
+      <h2>Package overview</h2>
+      <div class="summary">
+        <div><strong>4</strong><span class="muted">public exports</span></div>
+        <div><strong>0</strong><span class="muted">components</span></div>
+        <div><strong>19</strong><span class="muted">modules</span></div>
+        <div><strong>1</strong><span class="muted">entrypoints</span></div>
+      </div>
+      <h3>Entrypoints</h3>
+      <ul class="meta-list">
+        <li><code>src/index.ts</code></li>
+      </ul>
+    </section>
+    
+    <section class="panel"><h2>Policy</h2><p>No documentation findings.</p></section>
+    <section class="panel">
+      <h2>Modules</h2>
+      <article class="item" data-search="src/features/postgres/adapters/ports.ts PostgresClientPort PostgresPoolPort PostgresQueryPort">
+    <h3>src/features/postgres/adapters/ports.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>PostgresClientPort</code>, <code>PostgresPoolPort</code>, <code>PostgresQueryPort</code></p>
+  </article><article class="item" data-search="src/features/postgres/adapters/PostgresDbAdapter.ts src/features/postgres/adapters/ports.ts src/features/postgres/queries/buildPostgresDeleteQuery.ts src/features/postgres/queries/buildPostgresFindByIdQuery.ts src/features/postgres/queries/buildPostgresInsertQuery.ts src/features/postgres/queries/buildPostgresSelectQuery.ts src/features/postgres/queries/buildPostgresUpdateQuery.ts src/features/postgres/schema/buildPostgresCreateCollectionSql.ts src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts src/features/postgres/types.ts src/features/postgres/utils/toPostgresAdapterError.ts PostgresDbAdapter">
+    <h3>src/features/postgres/adapters/PostgresDbAdapter.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/adapters/ports.ts</code>, <code>src/features/postgres/queries/buildPostgresDeleteQuery.ts</code>, <code>src/features/postgres/queries/buildPostgresFindByIdQuery.ts</code>, <code>src/features/postgres/queries/buildPostgresInsertQuery.ts</code>, <code>src/features/postgres/queries/buildPostgresSelectQuery.ts</code>, <code>src/features/postgres/queries/buildPostgresUpdateQuery.ts</code>, <code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts</code>, <code>src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts</code>, <code>src/features/postgres/types.ts</code>, <code>src/features/postgres/utils/toPostgresAdapterError.ts</code></p>
+    <p><strong>Exports:</strong> <code>PostgresDbAdapter</code></p>
+  </article><article class="item" data-search="src/features/postgres/createPostgresAdapter.ts src/features/postgres/adapters/PostgresDbAdapter.ts src/features/postgres/types.ts createPostgresAdapter">
+    <h3>src/features/postgres/createPostgresAdapter.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/adapters/PostgresDbAdapter.ts</code>, <code>src/features/postgres/types.ts</code></p>
+    <p><strong>Exports:</strong> <code>createPostgresAdapter</code></p>
+  </article><article class="item" data-search="src/features/postgres/queries/buildPostgresDeleteQuery.ts src/features/postgres/queries/types.ts src/features/postgres/utils/buildPostgresFilters.ts src/features/postgres/utils/toPostgresTableName.ts buildPostgresDeleteQuery">
+    <h3>src/features/postgres/queries/buildPostgresDeleteQuery.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/queries/types.ts</code>, <code>src/features/postgres/utils/buildPostgresFilters.ts</code>, <code>src/features/postgres/utils/toPostgresTableName.ts</code></p>
+    <p><strong>Exports:</strong> <code>buildPostgresDeleteQuery</code></p>
+  </article><article class="item" data-search="src/features/postgres/queries/buildPostgresFindByIdQuery.ts src/features/postgres/queries/buildPostgresSelectQuery.ts src/features/postgres/queries/types.ts buildPostgresFindByIdQuery">
+    <h3>src/features/postgres/queries/buildPostgresFindByIdQuery.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/queries/buildPostgresSelectQuery.ts</code>, <code>src/features/postgres/queries/types.ts</code></p>
+    <p><strong>Exports:</strong> <code>buildPostgresFindByIdQuery</code></p>
+  </article><article class="item" data-search="src/features/postgres/queries/buildPostgresInsertQuery.ts src/features/postgres/queries/types.ts src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresInsertQuery">
+    <h3>src/features/postgres/queries/buildPostgresInsertQuery.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/queries/types.ts</code>, <code>src/features/postgres/utils/toPostgresTableName.ts</code>, <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code></p>
+    <p><strong>Exports:</strong> <code>buildPostgresInsertQuery</code></p>
+  </article><article class="item" data-search="src/features/postgres/queries/buildPostgresSelectQuery.ts src/features/postgres/queries/types.ts src/features/postgres/utils/buildPostgresFilters.ts src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresSelectQuery">
+    <h3>src/features/postgres/queries/buildPostgresSelectQuery.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/queries/types.ts</code>, <code>src/features/postgres/utils/buildPostgresFilters.ts</code>, <code>src/features/postgres/utils/toPostgresTableName.ts</code>, <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code></p>
+    <p><strong>Exports:</strong> <code>buildPostgresSelectQuery</code></p>
+  </article><article class="item" data-search="src/features/postgres/queries/buildPostgresUpdateQuery.ts src/features/postgres/queries/types.ts src/features/postgres/utils/buildPostgresFilters.ts src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresUpdateQuery">
+    <h3>src/features/postgres/queries/buildPostgresUpdateQuery.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/queries/types.ts</code>, <code>src/features/postgres/utils/buildPostgresFilters.ts</code>, <code>src/features/postgres/utils/toPostgresTableName.ts</code>, <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code></p>
+    <p><strong>Exports:</strong> <code>buildPostgresUpdateQuery</code></p>
+  </article><article class="item" data-search="src/features/postgres/queries/types.ts PostgresQuery">
+    <h3>src/features/postgres/queries/types.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>PostgresQuery</code></p>
+  </article><article class="item" data-search="src/features/postgres/schema/buildPostgresCreateCollectionSql.ts src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresCreateCollectionSql">
+    <h3>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/utils/toPostgresTableName.ts</code>, <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code></p>
+    <p><strong>Exports:</strong> <code>buildPostgresCreateCollectionSql</code></p>
+  </article><article class="item" data-search="src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts src/features/postgres/utils/toPostgresTableName.ts buildPostgresDeleteCollectionSql">
+    <h3>src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/utils/toPostgresTableName.ts</code></p>
+    <p><strong>Exports:</strong> <code>buildPostgresDeleteCollectionSql</code></p>
+  </article><article class="item" data-search="src/features/postgres/types.ts PostgresAdapter PostgresAdapterConfig PostgresAdapterLifecycle">
+    <h3>src/features/postgres/types.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>PostgresAdapter</code>, <code>PostgresAdapterConfig</code>, <code>PostgresAdapterLifecycle</code></p>
+  </article><article class="item" data-search="src/features/postgres/utils/buildPostgresFilters.ts src/features/postgres/utils/validatePostgresIdentifier.ts buildPostgresFilters">
+    <h3>src/features/postgres/utils/buildPostgresFilters.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code></p>
+    <p><strong>Exports:</strong> <code>buildPostgresFilters</code></p>
+  </article><article class="item" data-search="src/features/postgres/utils/toPostgresAdapterError.ts toPostgresAdapterError">
+    <h3>src/features/postgres/utils/toPostgresAdapterError.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>toPostgresAdapterError</code></p>
+  </article><article class="item" data-search="src/features/postgres/utils/toPostgresTableName.ts src/features/postgres/utils/validatePostgresIdentifier.ts toPostgresTableName">
+    <h3>src/features/postgres/utils/toPostgresTableName.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/utils/validatePostgresIdentifier.ts</code></p>
+    <p><strong>Exports:</strong> <code>toPostgresTableName</code></p>
+  </article><article class="item" data-search="src/features/postgres/utils/validatePostgresIdentifier.ts validatePostgresIdentifier">
+    <h3>src/features/postgres/utils/validatePostgresIdentifier.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>validatePostgresIdentifier</code></p>
+  </article><article class="item" data-search="src/index.ts createPostgresAdapter PostgresAdapter PostgresAdapterConfig PostgresAdapterLifecycle">
+    <h3>src/index.ts</h3>
+    <p class="muted">Configured entrypoint</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>createPostgresAdapter</code>, <code>PostgresAdapter</code>, <code>PostgresAdapterConfig</code>, <code>PostgresAdapterLifecycle</code></p>
+  </article><article class="item" data-search="test/index.test.ts src/features/postgres/adapters/ports.ts src/features/postgres/adapters/PostgresDbAdapter.ts src/index.ts">
+    <h3>test/index.test.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/features/postgres/adapters/ports.ts</code>, <code>src/features/postgres/adapters/PostgresDbAdapter.ts</code>, <code>src/index.ts</code></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
+  </article><article class="item" data-search="test/postgres.integration.test.ts src/index.ts">
+    <h3>test/postgres.integration.test.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/index.ts</code></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
+  </article>
+    </section>
+    <section class="panel">
+      <h2>Public API</h2>
+      
             <section>
               <h3>src/features/postgres/createPostgresAdapter.ts</h3>
-              <article
-                class="item"
-                id="symbol-createpostgresadapter"
-                data-search="createPostgresAdapter  value src/features/postgres/createPostgresAdapter.ts Creates a provider-neutral PostgreSQL adapter from a standard connection string. PostgresAdapter PostgresAdapterConfig (config: PostgresAdapterConfig) =&gt; PostgresAdapter"
-              >
-                <h4>createPostgresAdapter</h4>
-
-                <p class="muted">
-                  value • <code>src/features/postgres/createPostgresAdapter.ts:7:14</code>
-                </p>
-                <p>
-                  Creates a provider-neutral PostgreSQL adapter from a standard connection string.
-                </p>
-
-                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
-                <div>
-                  <strong>Related symbols:</strong>
-                  <ul class="chips">
-                    <li class="chip">PostgresAdapter</li>
-                    <li class="chip">PostgresAdapterConfig</li>
-                  </ul>
-                </div>
-                <div>
-                  <h5>Signature</h5>
-                  <pre>(config: PostgresAdapterConfig) =&gt; PostgresAdapter</pre>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Parameter</th>
-                        <th>Type</th>
-                        <th>Required</th>
-                        <th>Description</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
+              <article class="item" id="symbol-createpostgresadapter" data-search="createPostgresAdapter  value src/features/postgres/createPostgresAdapter.ts Creates a provider-neutral PostgreSQL adapter from a standard connection string. PostgresAdapter PostgresAdapterConfig (config: PostgresAdapterConfig) =&gt; PostgresAdapter">
+    <h4>createPostgresAdapter</h4>
+    
+    <p class="muted">value • <code>src/features/postgres/createPostgresAdapter.ts:7:14</code></p>
+    <p>Creates a provider-neutral PostgreSQL adapter from a standard connection string.</p>
+    
+    <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+    <div><strong>Related symbols:</strong> <ul class="chips"><li class="chip">PostgresAdapter</li><li class="chip">PostgresAdapterConfig</li></ul></div>
+    <div>
+        <h5>Signature</h5>
+        <pre>(config: PostgresAdapterConfig) =&gt; PostgresAdapter</pre>
+        <table>
+                <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+                <tbody>
+                  <tr>
                         <td><code>config</code></td>
                         <td><code>PostgresAdapterConfig</code></td>
                         <td>yes</td>
                         <td></td>
                       </tr>
-                    </tbody>
-                  </table>
-                  <p><strong>Returns:</strong> <code>PostgresAdapter</code></p>
-                </div>
-              </article>
+                </tbody>
+              </table>
+        <p><strong>Returns:</strong> <code>PostgresAdapter</code></p>
+      </div>
+    
+  </article>
             </section>
             <section>
               <h3>src/features/postgres/types.ts</h3>
-              <article
-                class="item"
-                id="symbol-postgresadapter"
-                data-search="PostgresAdapter  unknown src/features/postgres/types.ts "
-              >
-                <h4>PostgresAdapter</h4>
-
-                <p class="muted">unknown • <code>src/features/postgres/types.ts:11:1</code></p>
-
-                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
-                <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
-              </article>
-              <article
-                class="item"
-                id="symbol-postgresadapterconfig"
-                data-search="PostgresAdapterConfig  type src/features/postgres/types.ts "
-              >
-                <h4>PostgresAdapterConfig</h4>
-
-                <p class="muted">type • <code>src/features/postgres/types.ts:3:1</code></p>
-
-                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
-                <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
-
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Member</th>
-                      <th>Kind</th>
-                      <th>Type</th>
-                      <th>Required</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><code>connectionString</code></td>
-                      <td>property</td>
-                      <td><code>string</code></td>
-                      <td>yes</td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </article>
-              <article
-                class="item"
-                id="symbol-postgresadapterlifecycle"
-                data-search="PostgresAdapterLifecycle  type src/features/postgres/types.ts "
-              >
-                <h4>PostgresAdapterLifecycle</h4>
-
-                <p class="muted">type • <code>src/features/postgres/types.ts:7:1</code></p>
-
-                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
-                <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
-
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Member</th>
-                      <th>Kind</th>
-                      <th>Type</th>
-                      <th>Required</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><code>close</code></td>
-                      <td>method</td>
-                      <td><code>() =&gt; Promise&lt;void&gt;</code></td>
-                      <td>yes</td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </article>
+              <article class="item" id="symbol-postgresadapter" data-search="PostgresAdapter  unknown src/features/postgres/types.ts ">
+    <h4>PostgresAdapter</h4>
+    
+    <p class="muted">unknown • <code>src/features/postgres/types.ts:11:1</code></p>
+    
+    
+    <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+    <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+    
+    
+  </article><article class="item" id="symbol-postgresadapterconfig" data-search="PostgresAdapterConfig  type src/features/postgres/types.ts ">
+    <h4>PostgresAdapterConfig</h4>
+    
+    <p class="muted">type • <code>src/features/postgres/types.ts:3:1</code></p>
+    
+    
+    <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+    <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+    
+    <table>
+    <thead><tr><th>Member</th><th>Kind</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr>
+            <td><code>connectionString</code></td>
+            <td>property</td>
+            <td><code>string</code></td>
+            <td>yes</td>
+            <td></td>
+          </tr>
+    </tbody>
+  </table>
+  </article><article class="item" id="symbol-postgresadapterlifecycle" data-search="PostgresAdapterLifecycle  type src/features/postgres/types.ts ">
+    <h4>PostgresAdapterLifecycle</h4>
+    
+    <p class="muted">type • <code>src/features/postgres/types.ts:7:1</code></p>
+    
+    
+    <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+    <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+    
+    <table>
+    <thead><tr><th>Member</th><th>Kind</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr>
+            <td><code>close</code></td>
+            <td>method</td>
+            <td><code>() =&gt; Promise&lt;void&gt;</code></td>
+            <td>yes</td>
+            <td></td>
+          </tr>
+    </tbody>
+  </table>
+  </article>
             </section>
-          </section>
-          <section class="panel">
-            <h2>Component registry</h2>
-            <p class="empty">No components were detected.</p>
-          </section>
-          <section class="panel">
-            <h2>Diagrams</h2>
-            <article
-              class="item"
-              data-search="Architecture overview diagrams/architecture-overview.mmd"
-            >
-              <h3>Architecture overview</h3>
-              <p class="muted"><code>diagrams/architecture-overview.mmd</code></p>
-              <div class="mermaid">
-                graph TD package__ankhorage_db_postgres[&quot;@ankhorage/db-postgres&quot;]
-                entrypoint_src_index_ts[&quot;src/index.ts&quot;] package__ankhorage_db_postgres
-                --&gt; entrypoint_src_index_ts
-                module_src_features_postgres_adapters_ports_ts[&quot;src/features/postgres/adapters/ports.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_adapters_ports_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts[&quot;src/features/postgres/adapters/PostgresDbAdapter.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_adapters_ports_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_types_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_utils_toPostgresAdapterError_ts
-                module_src_features_postgres_createPostgresAdapter_ts[&quot;src/features/postgres/createPostgresAdapter.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_createPostgresAdapter_ts
-                module_src_features_postgres_createPostgresAdapter_ts --&gt;
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts
-                module_src_features_postgres_createPostgresAdapter_ts --&gt;
-                module_src_features_postgres_types_ts
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts[&quot;src/features/postgres/queries/buildPostgresDeleteQuery.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt;
-                module_src_features_postgres_utils_buildPostgresFilters_ts
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts[&quot;src/features/postgres/queries/buildPostgresFindByIdQuery.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts[&quot;src/features/postgres/queries/buildPostgresInsertQuery.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts[&quot;src/features/postgres/queries/buildPostgresSelectQuery.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt;
-                module_src_features_postgres_utils_buildPostgresFilters_ts
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts[&quot;src/features/postgres/queries/buildPostgresUpdateQuery.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt;
-                module_src_features_postgres_utils_buildPostgresFilters_ts
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_queries_types_ts[&quot;src/features/postgres/queries/types.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresCreateCollectionSql.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts
-                module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_types_ts[&quot;src/features/postgres/types.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_types_ts
-                module_src_features_postgres_utils_buildPostgresFilters_ts[&quot;src/features/postgres/utils/buildPostgresFilters.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_utils_buildPostgresFilters_ts
-                module_src_features_postgres_utils_buildPostgresFilters_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_utils_toPostgresAdapterError_ts[&quot;src/features/postgres/utils/toPostgresAdapterError.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_utils_toPostgresAdapterError_ts
-                module_src_features_postgres_utils_toPostgresTableName_ts[&quot;src/features/postgres/utils/toPostgresTableName.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_utils_toPostgresTableName_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts[&quot;src/features/postgres/utils/validatePostgresIdentifier.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_index_ts[&quot;src/index.ts&quot;]
-                module_test_index_test_ts[&quot;test/index.test.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt; module_test_index_test_ts
-                module_test_index_test_ts --&gt; module_src_features_postgres_adapters_ports_ts
-                module_test_index_test_ts --&gt;
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts module_test_index_test_ts
-                --&gt; module_src_index_ts
-                module_test_postgres_integration_test_ts[&quot;test/postgres.integration.test.ts&quot;]
-                package__ankhorage_db_postgres -.-&gt; module_test_postgres_integration_test_ts
-                module_test_postgres_integration_test_ts --&gt; module_src_index_ts
-              </div>
-              <details>
-                <summary>View Mermaid source</summary>
-                <pre>
-graph TD
+    </section>
+    <section class="panel">
+      <h2>Component registry</h2>
+      <p class="empty">No components were detected.</p>
+    </section>
+    <section class="panel">
+      <h2>Diagrams</h2>
+      <article class="item" data-search="Architecture overview diagrams/architecture-overview.mmd">
+    <h3>Architecture overview</h3>
+    <p class="muted"><code>diagrams/architecture-overview.mmd</code></p>
+    <div class="mermaid">graph TD
+  package__ankhorage_db_postgres[&quot;@ankhorage/db-postgres&quot;]
+  entrypoint_src_index_ts[&quot;src/index.ts&quot;]
+  package__ankhorage_db_postgres --&gt; entrypoint_src_index_ts
+  module_src_features_postgres_adapters_ports_ts[&quot;src/features/postgres/adapters/ports.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_adapters_ports_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts[&quot;src/features/postgres/adapters/PostgresDbAdapter.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_adapters_PostgresDbAdapter_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_adapters_ports_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresDeleteQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresInsertQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresSelectQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresUpdateQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_types_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_utils_toPostgresAdapterError_ts
+  module_src_features_postgres_createPostgresAdapter_ts[&quot;src/features/postgres/createPostgresAdapter.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_createPostgresAdapter_ts
+  module_src_features_postgres_createPostgresAdapter_ts --&gt; module_src_features_postgres_adapters_PostgresDbAdapter_ts
+  module_src_features_postgres_createPostgresAdapter_ts --&gt; module_src_features_postgres_types_ts
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts[&quot;src/features/postgres/queries/buildPostgresDeleteQuery.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_queries_buildPostgresDeleteQuery_ts
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt; module_src_features_postgres_utils_buildPostgresFilters_ts
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts[&quot;src/features/postgres/queries/buildPostgresFindByIdQuery.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts
+  module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts --&gt; module_src_features_postgres_queries_buildPostgresSelectQuery_ts
+  module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts[&quot;src/features/postgres/queries/buildPostgresInsertQuery.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_queries_buildPostgresInsertQuery_ts
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts[&quot;src/features/postgres/queries/buildPostgresSelectQuery.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_queries_buildPostgresSelectQuery_ts
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt; module_src_features_postgres_utils_buildPostgresFilters_ts
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts[&quot;src/features/postgres/queries/buildPostgresUpdateQuery.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_queries_buildPostgresUpdateQuery_ts
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt; module_src_features_postgres_utils_buildPostgresFilters_ts
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_queries_types_ts[&quot;src/features/postgres/queries/types.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresCreateCollectionSql.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts
+  module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts
+  module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_types_ts[&quot;src/features/postgres/types.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_types_ts
+  module_src_features_postgres_utils_buildPostgresFilters_ts[&quot;src/features/postgres/utils/buildPostgresFilters.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_utils_buildPostgresFilters_ts
+  module_src_features_postgres_utils_buildPostgresFilters_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_utils_toPostgresAdapterError_ts[&quot;src/features/postgres/utils/toPostgresAdapterError.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_utils_toPostgresAdapterError_ts
+  module_src_features_postgres_utils_toPostgresTableName_ts[&quot;src/features/postgres/utils/toPostgresTableName.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_utils_toPostgresTableName_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_utils_validatePostgresIdentifier_ts[&quot;src/features/postgres/utils/validatePostgresIdentifier.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_index_ts[&quot;src/index.ts&quot;]
+  module_test_index_test_ts[&quot;test/index.test.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_test_index_test_ts
+  module_test_index_test_ts --&gt; module_src_features_postgres_adapters_ports_ts
+  module_test_index_test_ts --&gt; module_src_features_postgres_adapters_PostgresDbAdapter_ts
+  module_test_index_test_ts --&gt; module_src_index_ts
+  module_test_postgres_integration_test_ts[&quot;test/postgres.integration.test.ts&quot;]
+  package__ankhorage_db_postgres -.-&gt; module_test_postgres_integration_test_ts
+  module_test_postgres_integration_test_ts --&gt; module_src_index_ts
+</div>
+    <details>
+      <summary>View Mermaid source</summary>
+      <pre>graph TD
   package__ankhorage_db_postgres[&quot;@ankhorage/db-postgres&quot;]
   entrypoint_src_index_ts[&quot;src/index.ts&quot;]
   package__ankhorage_db_postgres --&gt; entrypoint_src_index_ts
@@ -938,111 +570,71 @@ graph TD
   package__ankhorage_db_postgres -.-&gt; module_test_postgres_integration_test_ts
   module_test_postgres_integration_test_ts --&gt; module_src_index_ts
 </pre>
-              </details>
-            </article>
-            <article
-              class="item"
-              data-search="Module relationships diagrams/module-relationships.mmd"
-            >
-              <h3>Module relationships</h3>
-              <p class="muted"><code>diagrams/module-relationships.mmd</code></p>
-              <div class="mermaid">
-                graph LR
-                module_src_features_postgres_adapters_ports_ts[&quot;src/features/postgres/adapters/ports.ts&quot;]
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts[&quot;src/features/postgres/adapters/PostgresDbAdapter.ts&quot;]
-                module_src_features_postgres_createPostgresAdapter_ts[&quot;src/features/postgres/createPostgresAdapter.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts[&quot;src/features/postgres/queries/buildPostgresDeleteQuery.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts[&quot;src/features/postgres/queries/buildPostgresFindByIdQuery.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts[&quot;src/features/postgres/queries/buildPostgresInsertQuery.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts[&quot;src/features/postgres/queries/buildPostgresSelectQuery.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts[&quot;src/features/postgres/queries/buildPostgresUpdateQuery.ts&quot;]
-                module_src_features_postgres_queries_types_ts[&quot;src/features/postgres/queries/types.ts&quot;]
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresCreateCollectionSql.ts&quot;]
-                module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts&quot;]
-                module_src_features_postgres_types_ts[&quot;src/features/postgres/types.ts&quot;]
-                module_src_features_postgres_utils_buildPostgresFilters_ts[&quot;src/features/postgres/utils/buildPostgresFilters.ts&quot;]
-                module_src_features_postgres_utils_toPostgresAdapterError_ts[&quot;src/features/postgres/utils/toPostgresAdapterError.ts&quot;]
-                module_src_features_postgres_utils_toPostgresTableName_ts[&quot;src/features/postgres/utils/toPostgresTableName.ts&quot;]
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts[&quot;src/features/postgres/utils/validatePostgresIdentifier.ts&quot;]
-                module_src_index_ts[&quot;src/index.ts&quot;]
-                module_test_index_test_ts[&quot;test/index.test.ts&quot;]
-                module_test_postgres_integration_test_ts[&quot;test/postgres.integration.test.ts&quot;]
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_adapters_ports_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_types_ts
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt;
-                module_src_features_postgres_utils_toPostgresAdapterError_ts
-                module_src_features_postgres_createPostgresAdapter_ts --&gt;
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts
-                module_src_features_postgres_createPostgresAdapter_ts --&gt;
-                module_src_features_postgres_types_ts
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt;
-                module_src_features_postgres_utils_buildPostgresFilters_ts
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts --&gt;
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt;
-                module_src_features_postgres_utils_buildPostgresFilters_ts
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt;
-                module_src_features_postgres_queries_types_ts
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt;
-                module_src_features_postgres_utils_buildPostgresFilters_ts
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts --&gt;
-                module_src_features_postgres_utils_toPostgresTableName_ts
-                module_src_features_postgres_utils_buildPostgresFilters_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_src_features_postgres_utils_toPostgresTableName_ts --&gt;
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts
-                module_test_index_test_ts --&gt; module_src_features_postgres_adapters_ports_ts
-                module_test_index_test_ts --&gt;
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts module_test_index_test_ts
-                --&gt; module_src_index_ts module_test_postgres_integration_test_ts --&gt;
-                module_src_index_ts
-              </div>
-              <details>
-                <summary>View Mermaid source</summary>
-                <pre>
-graph LR
+    </details>
+  </article><article class="item" data-search="Module relationships diagrams/module-relationships.mmd">
+    <h3>Module relationships</h3>
+    <p class="muted"><code>diagrams/module-relationships.mmd</code></p>
+    <div class="mermaid">graph LR
+  module_src_features_postgres_adapters_ports_ts[&quot;src/features/postgres/adapters/ports.ts&quot;]
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts[&quot;src/features/postgres/adapters/PostgresDbAdapter.ts&quot;]
+  module_src_features_postgres_createPostgresAdapter_ts[&quot;src/features/postgres/createPostgresAdapter.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts[&quot;src/features/postgres/queries/buildPostgresDeleteQuery.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts[&quot;src/features/postgres/queries/buildPostgresFindByIdQuery.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts[&quot;src/features/postgres/queries/buildPostgresInsertQuery.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts[&quot;src/features/postgres/queries/buildPostgresSelectQuery.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts[&quot;src/features/postgres/queries/buildPostgresUpdateQuery.ts&quot;]
+  module_src_features_postgres_queries_types_ts[&quot;src/features/postgres/queries/types.ts&quot;]
+  module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresCreateCollectionSql.ts&quot;]
+  module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts&quot;]
+  module_src_features_postgres_types_ts[&quot;src/features/postgres/types.ts&quot;]
+  module_src_features_postgres_utils_buildPostgresFilters_ts[&quot;src/features/postgres/utils/buildPostgresFilters.ts&quot;]
+  module_src_features_postgres_utils_toPostgresAdapterError_ts[&quot;src/features/postgres/utils/toPostgresAdapterError.ts&quot;]
+  module_src_features_postgres_utils_toPostgresTableName_ts[&quot;src/features/postgres/utils/toPostgresTableName.ts&quot;]
+  module_src_features_postgres_utils_validatePostgresIdentifier_ts[&quot;src/features/postgres/utils/validatePostgresIdentifier.ts&quot;]
+  module_src_index_ts[&quot;src/index.ts&quot;]
+  module_test_index_test_ts[&quot;test/index.test.ts&quot;]
+  module_test_postgres_integration_test_ts[&quot;test/postgres.integration.test.ts&quot;]
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_adapters_ports_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresDeleteQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresInsertQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresSelectQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_queries_buildPostgresUpdateQuery_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_types_ts
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts --&gt; module_src_features_postgres_utils_toPostgresAdapterError_ts
+  module_src_features_postgres_createPostgresAdapter_ts --&gt; module_src_features_postgres_adapters_PostgresDbAdapter_ts
+  module_src_features_postgres_createPostgresAdapter_ts --&gt; module_src_features_postgres_types_ts
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt; module_src_features_postgres_utils_buildPostgresFilters_ts
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts --&gt; module_src_features_postgres_queries_buildPostgresSelectQuery_ts
+  module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt; module_src_features_postgres_utils_buildPostgresFilters_ts
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt; module_src_features_postgres_queries_types_ts
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt; module_src_features_postgres_utils_buildPostgresFilters_ts
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts --&gt; module_src_features_postgres_utils_toPostgresTableName_ts
+  module_src_features_postgres_utils_buildPostgresFilters_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_src_features_postgres_utils_toPostgresTableName_ts --&gt; module_src_features_postgres_utils_validatePostgresIdentifier_ts
+  module_test_index_test_ts --&gt; module_src_features_postgres_adapters_ports_ts
+  module_test_index_test_ts --&gt; module_src_features_postgres_adapters_PostgresDbAdapter_ts
+  module_test_index_test_ts --&gt; module_src_index_ts
+  module_test_postgres_integration_test_ts --&gt; module_src_index_ts
+</div>
+    <details>
+      <summary>View Mermaid source</summary>
+      <pre>graph LR
   module_src_features_postgres_adapters_ports_ts[&quot;src/features/postgres/adapters/ports.ts&quot;]
   module_src_features_postgres_adapters_PostgresDbAdapter_ts[&quot;src/features/postgres/adapters/PostgresDbAdapter.ts&quot;]
   module_src_features_postgres_createPostgresAdapter_ts[&quot;src/features/postgres/createPostgresAdapter.ts&quot;]
@@ -1100,47 +692,44 @@ graph LR
   module_test_index_test_ts --&gt; module_src_index_ts
   module_test_postgres_integration_test_ts --&gt; module_src_index_ts
 </pre>
-              </details>
-            </article>
-            <article class="item" data-search="Export graph diagrams/export-graph.mmd">
-              <h3>Export graph</h3>
-              <p class="muted"><code>diagrams/export-graph.mmd</code></p>
-              <div class="mermaid">
-                graph LR
-                module_src_features_postgres_adapters_ports_ts[&quot;src/features/postgres/adapters/ports.ts&quot;]
-                module_src_features_postgres_adapters_PostgresDbAdapter_ts[&quot;src/features/postgres/adapters/PostgresDbAdapter.ts&quot;]
-                module_src_features_postgres_createPostgresAdapter_ts[&quot;src/features/postgres/createPostgresAdapter.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresDeleteQuery_ts[&quot;src/features/postgres/queries/buildPostgresDeleteQuery.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts[&quot;src/features/postgres/queries/buildPostgresFindByIdQuery.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresInsertQuery_ts[&quot;src/features/postgres/queries/buildPostgresInsertQuery.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresSelectQuery_ts[&quot;src/features/postgres/queries/buildPostgresSelectQuery.ts&quot;]
-                module_src_features_postgres_queries_buildPostgresUpdateQuery_ts[&quot;src/features/postgres/queries/buildPostgresUpdateQuery.ts&quot;]
-                module_src_features_postgres_queries_types_ts[&quot;src/features/postgres/queries/types.ts&quot;]
-                module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresCreateCollectionSql.ts&quot;]
-                module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts&quot;]
-                module_src_features_postgres_types_ts[&quot;src/features/postgres/types.ts&quot;]
-                module_src_features_postgres_utils_buildPostgresFilters_ts[&quot;src/features/postgres/utils/buildPostgresFilters.ts&quot;]
-                module_src_features_postgres_utils_toPostgresAdapterError_ts[&quot;src/features/postgres/utils/toPostgresAdapterError.ts&quot;]
-                module_src_features_postgres_utils_toPostgresTableName_ts[&quot;src/features/postgres/utils/toPostgresTableName.ts&quot;]
-                module_src_features_postgres_utils_validatePostgresIdentifier_ts[&quot;src/features/postgres/utils/validatePostgresIdentifier.ts&quot;]
-                module_src_index_ts[&quot;src/index.ts&quot;]
-                module_test_index_test_ts[&quot;test/index.test.ts&quot;]
-                module_test_postgres_integration_test_ts[&quot;test/postgres.integration.test.ts&quot;]
-                export_createPostgresAdapter[&quot;createPostgresAdapter&quot;]
-                module_src_features_postgres_createPostgresAdapter_ts --&gt;
-                export_createPostgresAdapter export_createPostgresAdapter -.-&gt;
-                export_PostgresAdapter export_createPostgresAdapter -.-&gt;
-                export_PostgresAdapterConfig export_PostgresAdapter[&quot;PostgresAdapter&quot;]
-                module_src_features_postgres_types_ts --&gt; export_PostgresAdapter
-                export_PostgresAdapterConfig[&quot;PostgresAdapterConfig&quot;]
-                module_src_features_postgres_types_ts --&gt; export_PostgresAdapterConfig
-                export_PostgresAdapterLifecycle[&quot;PostgresAdapterLifecycle&quot;]
-                module_src_features_postgres_types_ts --&gt; export_PostgresAdapterLifecycle
-              </div>
-              <details>
-                <summary>View Mermaid source</summary>
-                <pre>
-graph LR
+    </details>
+  </article><article class="item" data-search="Export graph diagrams/export-graph.mmd">
+    <h3>Export graph</h3>
+    <p class="muted"><code>diagrams/export-graph.mmd</code></p>
+    <div class="mermaid">graph LR
+  module_src_features_postgres_adapters_ports_ts[&quot;src/features/postgres/adapters/ports.ts&quot;]
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts[&quot;src/features/postgres/adapters/PostgresDbAdapter.ts&quot;]
+  module_src_features_postgres_createPostgresAdapter_ts[&quot;src/features/postgres/createPostgresAdapter.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts[&quot;src/features/postgres/queries/buildPostgresDeleteQuery.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts[&quot;src/features/postgres/queries/buildPostgresFindByIdQuery.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts[&quot;src/features/postgres/queries/buildPostgresInsertQuery.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts[&quot;src/features/postgres/queries/buildPostgresSelectQuery.ts&quot;]
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts[&quot;src/features/postgres/queries/buildPostgresUpdateQuery.ts&quot;]
+  module_src_features_postgres_queries_types_ts[&quot;src/features/postgres/queries/types.ts&quot;]
+  module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresCreateCollectionSql.ts&quot;]
+  module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts[&quot;src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts&quot;]
+  module_src_features_postgres_types_ts[&quot;src/features/postgres/types.ts&quot;]
+  module_src_features_postgres_utils_buildPostgresFilters_ts[&quot;src/features/postgres/utils/buildPostgresFilters.ts&quot;]
+  module_src_features_postgres_utils_toPostgresAdapterError_ts[&quot;src/features/postgres/utils/toPostgresAdapterError.ts&quot;]
+  module_src_features_postgres_utils_toPostgresTableName_ts[&quot;src/features/postgres/utils/toPostgresTableName.ts&quot;]
+  module_src_features_postgres_utils_validatePostgresIdentifier_ts[&quot;src/features/postgres/utils/validatePostgresIdentifier.ts&quot;]
+  module_src_index_ts[&quot;src/index.ts&quot;]
+  module_test_index_test_ts[&quot;test/index.test.ts&quot;]
+  module_test_postgres_integration_test_ts[&quot;test/postgres.integration.test.ts&quot;]
+  export_createPostgresAdapter[&quot;createPostgresAdapter&quot;]
+  module_src_features_postgres_createPostgresAdapter_ts --&gt; export_createPostgresAdapter
+  export_createPostgresAdapter -.-&gt; export_PostgresAdapter
+  export_createPostgresAdapter -.-&gt; export_PostgresAdapterConfig
+  export_PostgresAdapter[&quot;PostgresAdapter&quot;]
+  module_src_features_postgres_types_ts --&gt; export_PostgresAdapter
+  export_PostgresAdapterConfig[&quot;PostgresAdapterConfig&quot;]
+  module_src_features_postgres_types_ts --&gt; export_PostgresAdapterConfig
+  export_PostgresAdapterLifecycle[&quot;PostgresAdapterLifecycle&quot;]
+  module_src_features_postgres_types_ts --&gt; export_PostgresAdapterLifecycle
+</div>
+    <details>
+      <summary>View Mermaid source</summary>
+      <pre>graph LR
   module_src_features_postgres_adapters_ports_ts[&quot;src/features/postgres/adapters/ports.ts&quot;]
   module_src_features_postgres_adapters_PostgresDbAdapter_ts[&quot;src/features/postgres/adapters/PostgresDbAdapter.ts&quot;]
   module_src_features_postgres_createPostgresAdapter_ts[&quot;src/features/postgres/createPostgresAdapter.ts&quot;]
@@ -1171,410 +760,211 @@ graph LR
   export_PostgresAdapterLifecycle[&quot;PostgresAdapterLifecycle&quot;]
   module_src_features_postgres_types_ts --&gt; export_PostgresAdapterLifecycle
 </pre>
-              </details>
-            </article>
-          </section>
+    </details>
+  </article>
+    </section>
         </section>
-        <section
-          id="view-src-features-postgres-adapters-postgresdbadapter-ts"
-          class="view"
-          data-view="src/features/postgres/adapters/PostgresDbAdapter.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/adapters/PostgresDbAdapter.ts</h2>
-            <article
-              class="item"
-              data-search="queryPostgres src/features/postgres/adapters/PostgresDbAdapter.ts "
-            >
-              <h3>queryPostgres</h3>
-              <p class="muted">
-                <code>src/features/postgres/adapters/PostgresDbAdapter.ts:165:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="rollbackIgnoringFailure src/features/postgres/adapters/PostgresDbAdapter.ts "
-            >
-              <h3>rollbackIgnoringFailure</h3>
-              <p class="muted">
-                <code>src/features/postgres/adapters/PostgresDbAdapter.ts:176:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="toResult src/features/postgres/adapters/PostgresDbAdapter.ts "
-            >
-              <h3>toResult</h3>
-              <p class="muted">
-                <code>src/features/postgres/adapters/PostgresDbAdapter.ts:183:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-createpostgresadapter-ts"
-          class="view"
-          data-view="src/features/postgres/createPostgresAdapter.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/createPostgresAdapter.ts</h2>
-            <article
-              class="item"
-              data-search="createPostgresAdapter src/features/postgres/createPostgresAdapter.ts Creates a provider-neutral PostgreSQL adapter from a standard connection string."
-            >
-              <h3>createPostgresAdapter</h3>
-              <p class="muted"><code>src/features/postgres/createPostgresAdapter.ts:7:14</code></p>
-              <p>
-                Creates a provider-neutral PostgreSQL adapter from a standard connection string.
-              </p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-queries-buildpostgresdeletequery-ts"
-          class="view"
-          data-view="src/features/postgres/queries/buildPostgresDeleteQuery.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/queries/buildPostgresDeleteQuery.ts</h2>
-            <article
-              class="item"
-              data-search="buildPostgresDeleteQuery src/features/postgres/queries/buildPostgresDeleteQuery.ts "
-            >
-              <h3>buildPostgresDeleteQuery</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresDeleteQuery.ts:8:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-queries-buildpostgresfindbyidquery-ts"
-          class="view"
-          data-view="src/features/postgres/queries/buildPostgresFindByIdQuery.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/queries/buildPostgresFindByIdQuery.ts</h2>
-            <article
-              class="item"
-              data-search="buildPostgresFindByIdQuery src/features/postgres/queries/buildPostgresFindByIdQuery.ts "
-            >
-              <h3>buildPostgresFindByIdQuery</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresFindByIdQuery.ts:7:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-queries-buildpostgresinsertquery-ts"
-          class="view"
-          data-view="src/features/postgres/queries/buildPostgresInsertQuery.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/queries/buildPostgresInsertQuery.ts</h2>
-            <article
-              class="item"
-              data-search="buildPostgresInsertQuery src/features/postgres/queries/buildPostgresInsertQuery.ts "
-            >
-              <h3>buildPostgresInsertQuery</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresInsertQuery.ts:8:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="toRecords src/features/postgres/queries/buildPostgresInsertQuery.ts "
-            >
-              <h3>toRecords</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresInsertQuery.ts:34:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="sameFields src/features/postgres/queries/buildPostgresInsertQuery.ts "
-            >
-              <h3>sameFields</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresInsertQuery.ts:39:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="readRecordValue src/features/postgres/queries/buildPostgresInsertQuery.ts "
-            >
-              <h3>readRecordValue</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresInsertQuery.ts:42:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-queries-buildpostgresselectquery-ts"
-          class="view"
-          data-view="src/features/postgres/queries/buildPostgresSelectQuery.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/queries/buildPostgresSelectQuery.ts</h2>
-            <article
-              class="item"
-              data-search="buildPostgresSelectQuery src/features/postgres/queries/buildPostgresSelectQuery.ts "
-            >
-              <h3>buildPostgresSelectQuery</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresSelectQuery.ts:9:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="positiveInteger src/features/postgres/queries/buildPostgresSelectQuery.ts "
-            >
-              <h3>positiveInteger</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresSelectQuery.ts:26:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="nonNegativeInteger src/features/postgres/queries/buildPostgresSelectQuery.ts "
-            >
-              <h3>nonNegativeInteger</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresSelectQuery.ts:31:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-queries-buildpostgresupdatequery-ts"
-          class="view"
-          data-view="src/features/postgres/queries/buildPostgresUpdateQuery.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/queries/buildPostgresUpdateQuery.ts</h2>
-            <article
-              class="item"
-              data-search="buildPostgresUpdateQuery src/features/postgres/queries/buildPostgresUpdateQuery.ts "
-            >
-              <h3>buildPostgresUpdateQuery</h3>
-              <p class="muted">
-                <code>src/features/postgres/queries/buildPostgresUpdateQuery.ts:9:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-schema-buildpostgrescreatecollectionsql-ts"
-          class="view"
-          data-view="src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts</h2>
-            <article
-              class="item"
-              data-search="buildPostgresCreateCollectionSql src/features/postgres/schema/buildPostgresCreateCollectionSql.ts "
-            >
-              <h3>buildPostgresCreateCollectionSql</h3>
-              <p class="muted">
-                <code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts:7:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="toFieldSql src/features/postgres/schema/buildPostgresCreateCollectionSql.ts "
-            >
-              <h3>toFieldSql</h3>
-              <p class="muted">
-                <code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts:15:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="toFieldType src/features/postgres/schema/buildPostgresCreateCollectionSql.ts "
-            >
-              <h3>toFieldType</h3>
-              <p class="muted">
-                <code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts:18:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="toDefaultValue src/features/postgres/schema/buildPostgresCreateCollectionSql.ts "
-            >
-              <h3>toDefaultValue</h3>
-              <p class="muted">
-                <code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts:35:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-schema-buildpostgresdeletecollectionsql-ts"
-          class="view"
-          data-view="src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts</h2>
-            <article
-              class="item"
-              data-search="buildPostgresDeleteCollectionSql src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts "
-            >
-              <h3>buildPostgresDeleteCollectionSql</h3>
-              <p class="muted">
-                <code>src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts:6:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-utils-buildpostgresfilters-ts"
-          class="view"
-          data-view="src/features/postgres/utils/buildPostgresFilters.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/utils/buildPostgresFilters.ts</h2>
-            <article
-              class="item"
-              data-search="buildPostgresFilters src/features/postgres/utils/buildPostgresFilters.ts "
-            >
-              <h3>buildPostgresFilters</h3>
-              <p class="muted">
-                <code>src/features/postgres/utils/buildPostgresFilters.ts:6:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="buildCondition src/features/postgres/utils/buildPostgresFilters.ts "
-            >
-              <h3>buildCondition</h3>
-              <p class="muted">
-                <code>src/features/postgres/utils/buildPostgresFilters.ts:16:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="buildInCondition src/features/postgres/utils/buildPostgresFilters.ts "
-            >
-              <h3>buildInCondition</h3>
-              <p class="muted">
-                <code>src/features/postgres/utils/buildPostgresFilters.ts:23:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="toFilterValue src/features/postgres/utils/buildPostgresFilters.ts "
-            >
-              <h3>toFilterValue</h3>
-              <p class="muted">
-                <code>src/features/postgres/utils/buildPostgresFilters.ts:38:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-            <article
-              class="item"
-              data-search="toOperator src/features/postgres/utils/buildPostgresFilters.ts "
-            >
-              <h3>toOperator</h3>
-              <p class="muted">
-                <code>src/features/postgres/utils/buildPostgresFilters.ts:45:7</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-utils-topostgresadaptererror-ts"
-          class="view"
-          data-view="src/features/postgres/utils/toPostgresAdapterError.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/utils/toPostgresAdapterError.ts</h2>
-            <article
-              class="item"
-              data-search="toPostgresAdapterError src/features/postgres/utils/toPostgresAdapterError.ts "
-            >
-              <h3>toPostgresAdapterError</h3>
-              <p class="muted">
-                <code>src/features/postgres/utils/toPostgresAdapterError.ts:4:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-utils-topostgrestablename-ts"
-          class="view"
-          data-view="src/features/postgres/utils/toPostgresTableName.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/utils/toPostgresTableName.ts</h2>
-            <article
-              class="item"
-              data-search="toPostgresTableName src/features/postgres/utils/toPostgresTableName.ts "
-            >
-              <h3>toPostgresTableName</h3>
-              <p class="muted">
-                <code>src/features/postgres/utils/toPostgresTableName.ts:6:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
-        <section
-          id="view-src-features-postgres-utils-validatepostgresidentifier-ts"
-          class="view"
-          data-view="src/features/postgres/utils/validatePostgresIdentifier.ts"
-          hidden
-        >
-          <section class="panel">
-            <h2>src/features/postgres/utils/validatePostgresIdentifier.ts</h2>
-            <article
-              class="item"
-              data-search="validatePostgresIdentifier src/features/postgres/utils/validatePostgresIdentifier.ts "
-            >
-              <h3>validatePostgresIdentifier</h3>
-              <p class="muted">
-                <code>src/features/postgres/utils/validatePostgresIdentifier.ts:2:14</code>
-              </p>
-              <p class="empty">No description available.</p>
-            </article>
-          </section>
-        </section>
+        <section id="view-src-features-postgres-adapters-postgresdbadapter-ts" class="view" data-view="src/features/postgres/adapters/PostgresDbAdapter.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/adapters/PostgresDbAdapter.ts</h2>
+      <article class="item" data-search="queryPostgres src/features/postgres/adapters/PostgresDbAdapter.ts ">
+    <h3>queryPostgres</h3>
+    <p class="muted"><code>src/features/postgres/adapters/PostgresDbAdapter.ts:165:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="rollbackIgnoringFailure src/features/postgres/adapters/PostgresDbAdapter.ts ">
+    <h3>rollbackIgnoringFailure</h3>
+    <p class="muted"><code>src/features/postgres/adapters/PostgresDbAdapter.ts:176:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="toResult src/features/postgres/adapters/PostgresDbAdapter.ts ">
+    <h3>toResult</h3>
+    <p class="muted"><code>src/features/postgres/adapters/PostgresDbAdapter.ts:183:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-createpostgresadapter-ts" class="view" data-view="src/features/postgres/createPostgresAdapter.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/createPostgresAdapter.ts</h2>
+      <article class="item" data-search="createPostgresAdapter src/features/postgres/createPostgresAdapter.ts Creates a provider-neutral PostgreSQL adapter from a standard connection string.">
+    <h3>createPostgresAdapter</h3>
+    <p class="muted"><code>src/features/postgres/createPostgresAdapter.ts:7:14</code></p>
+    <p>Creates a provider-neutral PostgreSQL adapter from a standard connection string.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-queries-buildpostgresdeletequery-ts" class="view" data-view="src/features/postgres/queries/buildPostgresDeleteQuery.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/queries/buildPostgresDeleteQuery.ts</h2>
+      <article class="item" data-search="buildPostgresDeleteQuery src/features/postgres/queries/buildPostgresDeleteQuery.ts ">
+    <h3>buildPostgresDeleteQuery</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresDeleteQuery.ts:8:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-queries-buildpostgresfindbyidquery-ts" class="view" data-view="src/features/postgres/queries/buildPostgresFindByIdQuery.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/queries/buildPostgresFindByIdQuery.ts</h2>
+      <article class="item" data-search="buildPostgresFindByIdQuery src/features/postgres/queries/buildPostgresFindByIdQuery.ts ">
+    <h3>buildPostgresFindByIdQuery</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresFindByIdQuery.ts:7:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-queries-buildpostgresinsertquery-ts" class="view" data-view="src/features/postgres/queries/buildPostgresInsertQuery.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/queries/buildPostgresInsertQuery.ts</h2>
+      <article class="item" data-search="buildPostgresInsertQuery src/features/postgres/queries/buildPostgresInsertQuery.ts ">
+    <h3>buildPostgresInsertQuery</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresInsertQuery.ts:8:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="toRecords src/features/postgres/queries/buildPostgresInsertQuery.ts ">
+    <h3>toRecords</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresInsertQuery.ts:34:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="sameFields src/features/postgres/queries/buildPostgresInsertQuery.ts ">
+    <h3>sameFields</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresInsertQuery.ts:39:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="readRecordValue src/features/postgres/queries/buildPostgresInsertQuery.ts ">
+    <h3>readRecordValue</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresInsertQuery.ts:42:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-queries-buildpostgresselectquery-ts" class="view" data-view="src/features/postgres/queries/buildPostgresSelectQuery.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/queries/buildPostgresSelectQuery.ts</h2>
+      <article class="item" data-search="buildPostgresSelectQuery src/features/postgres/queries/buildPostgresSelectQuery.ts ">
+    <h3>buildPostgresSelectQuery</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresSelectQuery.ts:9:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="positiveInteger src/features/postgres/queries/buildPostgresSelectQuery.ts ">
+    <h3>positiveInteger</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresSelectQuery.ts:26:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="nonNegativeInteger src/features/postgres/queries/buildPostgresSelectQuery.ts ">
+    <h3>nonNegativeInteger</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresSelectQuery.ts:31:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-queries-buildpostgresupdatequery-ts" class="view" data-view="src/features/postgres/queries/buildPostgresUpdateQuery.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/queries/buildPostgresUpdateQuery.ts</h2>
+      <article class="item" data-search="buildPostgresUpdateQuery src/features/postgres/queries/buildPostgresUpdateQuery.ts ">
+    <h3>buildPostgresUpdateQuery</h3>
+    <p class="muted"><code>src/features/postgres/queries/buildPostgresUpdateQuery.ts:9:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-schema-buildpostgrescreatecollectionsql-ts" class="view" data-view="src/features/postgres/schema/buildPostgresCreateCollectionSql.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts</h2>
+      <article class="item" data-search="buildPostgresCreateCollectionSql src/features/postgres/schema/buildPostgresCreateCollectionSql.ts ">
+    <h3>buildPostgresCreateCollectionSql</h3>
+    <p class="muted"><code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts:7:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="toFieldSql src/features/postgres/schema/buildPostgresCreateCollectionSql.ts ">
+    <h3>toFieldSql</h3>
+    <p class="muted"><code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts:15:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="toFieldType src/features/postgres/schema/buildPostgresCreateCollectionSql.ts ">
+    <h3>toFieldType</h3>
+    <p class="muted"><code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts:18:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="toDefaultValue src/features/postgres/schema/buildPostgresCreateCollectionSql.ts ">
+    <h3>toDefaultValue</h3>
+    <p class="muted"><code>src/features/postgres/schema/buildPostgresCreateCollectionSql.ts:35:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-schema-buildpostgresdeletecollectionsql-ts" class="view" data-view="src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts</h2>
+      <article class="item" data-search="buildPostgresDeleteCollectionSql src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts ">
+    <h3>buildPostgresDeleteCollectionSql</h3>
+    <p class="muted"><code>src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts:6:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-utils-buildpostgresfilters-ts" class="view" data-view="src/features/postgres/utils/buildPostgresFilters.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/utils/buildPostgresFilters.ts</h2>
+      <article class="item" data-search="buildPostgresFilters src/features/postgres/utils/buildPostgresFilters.ts ">
+    <h3>buildPostgresFilters</h3>
+    <p class="muted"><code>src/features/postgres/utils/buildPostgresFilters.ts:6:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="buildCondition src/features/postgres/utils/buildPostgresFilters.ts ">
+    <h3>buildCondition</h3>
+    <p class="muted"><code>src/features/postgres/utils/buildPostgresFilters.ts:16:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="buildInCondition src/features/postgres/utils/buildPostgresFilters.ts ">
+    <h3>buildInCondition</h3>
+    <p class="muted"><code>src/features/postgres/utils/buildPostgresFilters.ts:23:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="toFilterValue src/features/postgres/utils/buildPostgresFilters.ts ">
+    <h3>toFilterValue</h3>
+    <p class="muted"><code>src/features/postgres/utils/buildPostgresFilters.ts:38:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article><article class="item" data-search="toOperator src/features/postgres/utils/buildPostgresFilters.ts ">
+    <h3>toOperator</h3>
+    <p class="muted"><code>src/features/postgres/utils/buildPostgresFilters.ts:45:7</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-utils-topostgresadaptererror-ts" class="view" data-view="src/features/postgres/utils/toPostgresAdapterError.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/utils/toPostgresAdapterError.ts</h2>
+      <article class="item" data-search="toPostgresAdapterError src/features/postgres/utils/toPostgresAdapterError.ts ">
+    <h3>toPostgresAdapterError</h3>
+    <p class="muted"><code>src/features/postgres/utils/toPostgresAdapterError.ts:4:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-utils-topostgrestablename-ts" class="view" data-view="src/features/postgres/utils/toPostgresTableName.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/utils/toPostgresTableName.ts</h2>
+      <article class="item" data-search="toPostgresTableName src/features/postgres/utils/toPostgresTableName.ts ">
+    <h3>toPostgresTableName</h3>
+    <p class="muted"><code>src/features/postgres/utils/toPostgresTableName.ts:6:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section><section id="view-src-features-postgres-utils-validatepostgresidentifier-ts" class="view" data-view="src/features/postgres/utils/validatePostgresIdentifier.ts" hidden>
+    <section class="panel">
+      <h2>src/features/postgres/utils/validatePostgresIdentifier.ts</h2>
+      <article class="item" data-search="validatePostgresIdentifier src/features/postgres/utils/validatePostgresIdentifier.ts ">
+    <h3>validatePostgresIdentifier</h3>
+    <p class="muted"><code>src/features/postgres/utils/validatePostgresIdentifier.ts:2:14</code></p>
+    <p class="empty">No description available.</p>
+    
+  </article>
+    </section>
+  </section>
       </main>
     </div>
     <script>
