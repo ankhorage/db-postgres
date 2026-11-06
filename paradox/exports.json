@@ -1,0 +1,112 @@
+[
+  {
+    "name": "createPostgresAdapter",
+    "title": null,
+    "description": "Creates a provider-neutral PostgreSQL adapter from a standard connection string.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "value",
+    "modulePath": "src/features/postgres/createPostgresAdapter.ts",
+    "sourceLocation": {
+      "filePath": "src/features/postgres/createPostgresAdapter.ts",
+      "line": 7,
+      "column": 14
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["PostgresAdapter", "PostgresAdapterConfig"],
+    "signatures": [
+      {
+        "label": "(config: PostgresAdapterConfig) => PostgresAdapter",
+        "parameters": [
+          {
+            "name": "config",
+            "type": "PostgresAdapterConfig",
+            "required": true,
+            "description": null
+          }
+        ],
+        "returnType": "PostgresAdapter",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "PostgresAdapter",
+    "title": null,
+    "description": null,
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "unknown",
+    "modulePath": "src/features/postgres/types.ts",
+    "sourceLocation": {
+      "filePath": "src/features/postgres/types.ts",
+      "line": 11,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "PostgresAdapterConfig",
+    "title": null,
+    "description": null,
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/features/postgres/types.ts",
+    "sourceLocation": {
+      "filePath": "src/features/postgres/types.ts",
+      "line": 3,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "connectionString",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "PostgresAdapterLifecycle",
+    "title": null,
+    "description": null,
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "type",
+    "modulePath": "src/features/postgres/types.ts",
+    "sourceLocation": {
+      "filePath": "src/features/postgres/types.ts",
+      "line": 7,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "close",
+        "kind": "method",
+        "type": "() => Promise<void>",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  }
+]
