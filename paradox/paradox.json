@@ -1,0 +1,1363 @@
+{
+  "packageName": "@ankhorage/db-postgres",
+  "packageId": "@ankhorage/db-postgres",
+  "description": "PostgreSQL adapter for @ankhorage/contracts/db.",
+  "collaborators": null,
+  "donation": null,
+  "badges": [
+    {
+      "id": "license",
+      "label": "license",
+      "value": "MIT",
+      "color": "2563eb"
+    },
+    {
+      "id": "npm",
+      "label": "npm",
+      "value": "v0.1.0",
+      "color": "cb3837"
+    },
+    {
+      "id": "runtime",
+      "label": "runtime",
+      "value": "bun",
+      "color": "f59e0b"
+    },
+    {
+      "id": "typescript",
+      "label": "typescript",
+      "value": "strict",
+      "color": "2563eb"
+    },
+    {
+      "id": "eslint",
+      "label": "eslint",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "prettier",
+      "label": "prettier",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "build",
+      "label": "build",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "tests",
+      "label": "tests",
+      "value": "configured",
+      "color": "6f42c1"
+    },
+    {
+      "id": "docs",
+      "label": "paradox",
+      "value": "canonical",
+      "color": "0a7f3f"
+    }
+  ],
+  "usage": {
+    "packageName": "@ankhorage/db-postgres",
+    "command": "ankh db-postgres --help"
+  },
+  "usageEntries": [],
+  "exampleCount": 0,
+  "findings": [],
+  "config": null,
+  "entrypoints": ["src/index.ts"],
+  "modules": [
+    {
+      "path": "src/features/postgres/adapters/ports.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["PostgresClientPort", "PostgresPoolPort", "PostgresQueryPort"]
+    },
+    {
+      "path": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/postgres/adapters/ports.ts",
+        "src/features/postgres/queries/buildPostgresDeleteQuery.ts",
+        "src/features/postgres/queries/buildPostgresFindByIdQuery.ts",
+        "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "src/features/postgres/queries/buildPostgresUpdateQuery.ts",
+        "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts",
+        "src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts",
+        "src/features/postgres/types.ts",
+        "src/features/postgres/utils/toPostgresAdapterError.ts"
+      ],
+      "exports": ["PostgresDbAdapter"]
+    },
+    {
+      "path": "src/features/postgres/createPostgresAdapter.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "src/features/postgres/types.ts"
+      ],
+      "exports": ["createPostgresAdapter"]
+    },
+    {
+      "path": "src/features/postgres/queries/buildPostgresDeleteQuery.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/postgres/queries/types.ts",
+        "src/features/postgres/utils/buildPostgresFilters.ts",
+        "src/features/postgres/utils/toPostgresTableName.ts"
+      ],
+      "exports": ["buildPostgresDeleteQuery"]
+    },
+    {
+      "path": "src/features/postgres/queries/buildPostgresFindByIdQuery.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "src/features/postgres/queries/types.ts"
+      ],
+      "exports": ["buildPostgresFindByIdQuery"]
+    },
+    {
+      "path": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/postgres/queries/types.ts",
+        "src/features/postgres/utils/toPostgresTableName.ts",
+        "src/features/postgres/utils/validatePostgresIdentifier.ts"
+      ],
+      "exports": ["buildPostgresInsertQuery"]
+    },
+    {
+      "path": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/postgres/queries/types.ts",
+        "src/features/postgres/utils/buildPostgresFilters.ts",
+        "src/features/postgres/utils/toPostgresTableName.ts",
+        "src/features/postgres/utils/validatePostgresIdentifier.ts"
+      ],
+      "exports": ["buildPostgresSelectQuery"]
+    },
+    {
+      "path": "src/features/postgres/queries/buildPostgresUpdateQuery.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/postgres/queries/types.ts",
+        "src/features/postgres/utils/buildPostgresFilters.ts",
+        "src/features/postgres/utils/toPostgresTableName.ts",
+        "src/features/postgres/utils/validatePostgresIdentifier.ts"
+      ],
+      "exports": ["buildPostgresUpdateQuery"]
+    },
+    {
+      "path": "src/features/postgres/queries/types.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["PostgresQuery"]
+    },
+    {
+      "path": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/postgres/utils/toPostgresTableName.ts",
+        "src/features/postgres/utils/validatePostgresIdentifier.ts"
+      ],
+      "exports": ["buildPostgresCreateCollectionSql"]
+    },
+    {
+      "path": "src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/postgres/utils/toPostgresTableName.ts"],
+      "exports": ["buildPostgresDeleteCollectionSql"]
+    },
+    {
+      "path": "src/features/postgres/types.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["PostgresAdapter", "PostgresAdapterConfig", "PostgresAdapterLifecycle"]
+    },
+    {
+      "path": "src/features/postgres/utils/buildPostgresFilters.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/postgres/utils/validatePostgresIdentifier.ts"],
+      "exports": ["buildPostgresFilters"]
+    },
+    {
+      "path": "src/features/postgres/utils/toPostgresAdapterError.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["toPostgresAdapterError"]
+    },
+    {
+      "path": "src/features/postgres/utils/toPostgresTableName.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/features/postgres/utils/validatePostgresIdentifier.ts"],
+      "exports": ["toPostgresTableName"]
+    },
+    {
+      "path": "src/features/postgres/utils/validatePostgresIdentifier.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["validatePostgresIdentifier"]
+    },
+    {
+      "path": "src/index.ts",
+      "isEntrypoint": true,
+      "dependencies": [],
+      "exports": [
+        "createPostgresAdapter",
+        "PostgresAdapter",
+        "PostgresAdapterConfig",
+        "PostgresAdapterLifecycle"
+      ]
+    },
+    {
+      "path": "test/index.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/postgres/adapters/ports.ts",
+        "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "src/index.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "test/postgres.integration.test.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/index.ts"],
+      "exports": []
+    }
+  ],
+  "exports": [
+    {
+      "name": "createPostgresAdapter",
+      "title": null,
+      "description": "Creates a provider-neutral PostgreSQL adapter from a standard connection string.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "value",
+      "modulePath": "src/features/postgres/createPostgresAdapter.ts",
+      "sourceLocation": {
+        "filePath": "src/features/postgres/createPostgresAdapter.ts",
+        "line": 7,
+        "column": 14
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["PostgresAdapter", "PostgresAdapterConfig"],
+      "signatures": [
+        {
+          "label": "(config: PostgresAdapterConfig) => PostgresAdapter",
+          "parameters": [
+            {
+              "name": "config",
+              "type": "PostgresAdapterConfig",
+              "required": true,
+              "description": null
+            }
+          ],
+          "returnType": "PostgresAdapter",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "PostgresAdapter",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "unknown",
+      "modulePath": "src/features/postgres/types.ts",
+      "sourceLocation": {
+        "filePath": "src/features/postgres/types.ts",
+        "line": 11,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "PostgresAdapterConfig",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/features/postgres/types.ts",
+      "sourceLocation": {
+        "filePath": "src/features/postgres/types.ts",
+        "line": 3,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "connectionString",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "PostgresAdapterLifecycle",
+      "title": null,
+      "description": null,
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "type",
+      "modulePath": "src/features/postgres/types.ts",
+      "sourceLocation": {
+        "filePath": "src/features/postgres/types.ts",
+        "line": 7,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "close",
+          "kind": "method",
+          "type": "() => Promise<void>",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    }
+  ],
+  "components": [],
+  "sourceFunctions": [
+    {
+      "name": "queryPostgres",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "line": 165,
+        "column": 7
+      }
+    },
+    {
+      "name": "rollbackIgnoringFailure",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "line": 176,
+        "column": 7
+      }
+    },
+    {
+      "name": "toResult",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "line": 183,
+        "column": 7
+      }
+    },
+    {
+      "name": "createPostgresAdapter",
+      "description": "Creates a provider-neutral PostgreSQL adapter from a standard connection string.",
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/createPostgresAdapter.ts",
+        "line": 7,
+        "column": 14
+      }
+    },
+    {
+      "name": "buildPostgresDeleteQuery",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts",
+        "line": 8,
+        "column": 14
+      }
+    },
+    {
+      "name": "buildPostgresFindByIdQuery",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresFindByIdQuery.ts",
+        "line": 7,
+        "column": 14
+      }
+    },
+    {
+      "name": "buildPostgresInsertQuery",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "line": 8,
+        "column": 14
+      }
+    },
+    {
+      "name": "toRecords",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "line": 34,
+        "column": 7
+      }
+    },
+    {
+      "name": "sameFields",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "line": 39,
+        "column": 7
+      }
+    },
+    {
+      "name": "readRecordValue",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "line": 42,
+        "column": 7
+      }
+    },
+    {
+      "name": "buildPostgresSelectQuery",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "line": 9,
+        "column": 14
+      }
+    },
+    {
+      "name": "positiveInteger",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "line": 26,
+        "column": 7
+      }
+    },
+    {
+      "name": "nonNegativeInteger",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "line": 31,
+        "column": 7
+      }
+    },
+    {
+      "name": "buildPostgresUpdateQuery",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts",
+        "line": 9,
+        "column": 14
+      }
+    },
+    {
+      "name": "buildPostgresCreateCollectionSql",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts",
+        "line": 7,
+        "column": 14
+      }
+    },
+    {
+      "name": "toFieldSql",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts",
+        "line": 15,
+        "column": 7
+      }
+    },
+    {
+      "name": "toFieldType",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts",
+        "line": 18,
+        "column": 7
+      }
+    },
+    {
+      "name": "toDefaultValue",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts",
+        "line": 35,
+        "column": 7
+      }
+    },
+    {
+      "name": "buildPostgresDeleteCollectionSql",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts",
+        "line": 6,
+        "column": 14
+      }
+    },
+    {
+      "name": "buildPostgresFilters",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "line": 6,
+        "column": 14
+      }
+    },
+    {
+      "name": "buildCondition",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "line": 16,
+        "column": 7
+      }
+    },
+    {
+      "name": "buildInCondition",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "line": 23,
+        "column": 7
+      }
+    },
+    {
+      "name": "toFilterValue",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "line": 38,
+        "column": 7
+      }
+    },
+    {
+      "name": "toOperator",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "line": 45,
+        "column": 7
+      }
+    },
+    {
+      "name": "toPostgresAdapterError",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/utils/toPostgresAdapterError.ts",
+        "line": 4,
+        "column": 14
+      }
+    },
+    {
+      "name": "toPostgresTableName",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/utils/toPostgresTableName.ts",
+        "line": 6,
+        "column": 14
+      }
+    },
+    {
+      "name": "validatePostgresIdentifier",
+      "description": null,
+      "see": [],
+      "security": [],
+      "sourceLocation": {
+        "filePath": "src/features/postgres/utils/validatePostgresIdentifier.ts",
+        "line": 2,
+        "column": 14
+      }
+    }
+  ],
+  "sequenceScenarios": [
+    {
+      "kind": "export",
+      "name": "createPostgresAdapter",
+      "sourcePath": "src/features/postgres/createPostgresAdapter.ts",
+      "symbolName": "createPostgresAdapter",
+      "description": "Creates a provider-neutral PostgreSQL adapter from a standard connection string.",
+      "isReadme": false
+    }
+  ],
+  "graphs": {
+    "imports": [
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/features/postgres/createPostgresAdapter.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/features/postgres/types.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "test/index.test.ts",
+        "toPath": "src/features/postgres/adapters/ports.ts",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromPath": "test/index.test.ts",
+        "toPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromPath": "test/index.test.ts",
+        "toPath": "src/index.ts",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromPath": "test/postgres.integration.test.ts",
+        "toPath": "src/index.ts",
+        "sourcePath": "test/postgres.integration.test.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/createPostgresAdapter.ts",
+        "toPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "sourcePath": "src/features/postgres/createPostgresAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/createPostgresAdapter.ts",
+        "toPath": "src/features/postgres/types.ts",
+        "sourcePath": "src/features/postgres/createPostgresAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/queries/buildPostgresFindByIdQuery.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/types.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/utils/toPostgresAdapterError.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/adapters/PostgresDbAdapter.ts",
+        "toPath": "src/features/postgres/adapters/ports.ts",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts",
+        "toPath": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts",
+        "toPath": "src/features/postgres/utils/toPostgresTableName.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts",
+        "toPath": "src/features/postgres/queries/types.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresFindByIdQuery.ts",
+        "toPath": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresFindByIdQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresFindByIdQuery.ts",
+        "toPath": "src/features/postgres/queries/types.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresFindByIdQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "toPath": "src/features/postgres/utils/toPostgresTableName.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "toPath": "src/features/postgres/utils/validatePostgresIdentifier.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "toPath": "src/features/postgres/queries/types.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "toPath": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "toPath": "src/features/postgres/utils/toPostgresTableName.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "toPath": "src/features/postgres/utils/validatePostgresIdentifier.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "toPath": "src/features/postgres/queries/types.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts",
+        "toPath": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts",
+        "toPath": "src/features/postgres/utils/toPostgresTableName.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts",
+        "toPath": "src/features/postgres/utils/validatePostgresIdentifier.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts",
+        "toPath": "src/features/postgres/queries/types.ts",
+        "sourcePath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts",
+        "toPath": "src/features/postgres/utils/toPostgresTableName.ts",
+        "sourcePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts",
+        "toPath": "src/features/postgres/utils/validatePostgresIdentifier.ts",
+        "sourcePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts",
+        "toPath": "src/features/postgres/utils/toPostgresTableName.ts",
+        "sourcePath": "src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "toPath": "src/features/postgres/utils/validatePostgresIdentifier.ts",
+        "sourcePath": "src/features/postgres/utils/buildPostgresFilters.ts"
+      },
+      {
+        "fromPath": "src/features/postgres/utils/toPostgresTableName.ts",
+        "toPath": "src/features/postgres/utils/validatePostgresIdentifier.ts",
+        "sourcePath": "src/features/postgres/utils/toPostgresTableName.ts"
+      }
+    ],
+    "calls": [
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "createPostgresAdapter",
+        "callExpression": "createPostgresAdapter",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "createPool",
+        "callExpression": "createPool",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "select",
+        "callExpression": "adapter.select",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "insert",
+        "callExpression": "adapter.insert",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "update",
+        "callExpression": "adapter.update",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "delete",
+        "callExpression": "adapter.delete",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "generateCreateCollectionSql",
+        "callExpression": "adapter.generateCreateCollectionSql",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "transaction",
+        "callExpression": "adapter.transaction",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/index.test.ts",
+        "toSymbol": "close",
+        "callExpression": "adapter.close",
+        "sourcePath": "test/index.test.ts"
+      },
+      {
+        "fromSymbol": "test/postgres.integration.test.ts",
+        "toSymbol": "createPostgresAdapter",
+        "callExpression": "createPostgresAdapter",
+        "sourcePath": "test/postgres.integration.test.ts"
+      },
+      {
+        "fromSymbol": "test/postgres.integration.test.ts",
+        "toSymbol": "close",
+        "callExpression": "adapter.close",
+        "sourcePath": "test/postgres.integration.test.ts"
+      },
+      {
+        "fromSymbol": "close",
+        "toSymbol": "end",
+        "callExpression": "this.pool.end",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "select",
+        "toSymbol": "query",
+        "callExpression": "this.query",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "select",
+        "toSymbol": "buildPostgresSelectQuery",
+        "callExpression": "buildPostgresSelectQuery",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "insert",
+        "toSymbol": "query",
+        "callExpression": "this.query",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "insert",
+        "toSymbol": "buildPostgresInsertQuery",
+        "callExpression": "buildPostgresInsertQuery",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "update",
+        "toSymbol": "query",
+        "callExpression": "this.query",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "update",
+        "toSymbol": "buildPostgresUpdateQuery",
+        "callExpression": "buildPostgresUpdateQuery",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "delete",
+        "toSymbol": "query",
+        "callExpression": "this.query",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "delete",
+        "toSymbol": "buildPostgresDeleteQuery",
+        "callExpression": "buildPostgresDeleteQuery",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "findById",
+        "toSymbol": "query",
+        "callExpression": "this.query",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "findById",
+        "toSymbol": "buildPostgresFindByIdQuery",
+        "callExpression": "buildPostgresFindByIdQuery",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "findById",
+        "toSymbol": "toResult",
+        "callExpression": "toResult",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "transaction",
+        "toSymbol": "connect",
+        "callExpression": "this.connect",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "transaction",
+        "toSymbol": "query",
+        "callExpression": "client.data.query",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "transaction",
+        "toSymbol": "release",
+        "callExpression": "client.data.release",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "transaction",
+        "toSymbol": "fail",
+        "callExpression": "this.fail",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "transaction",
+        "toSymbol": "run",
+        "callExpression": "run",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "transaction",
+        "toSymbol": "toResult",
+        "callExpression": "toResult",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "transaction",
+        "toSymbol": "rollbackIgnoringFailure",
+        "callExpression": "rollbackIgnoringFailure",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "generateCreateCollectionSql",
+        "toSymbol": "buildPostgresCreateCollectionSql",
+        "callExpression": "buildPostgresCreateCollectionSql",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "generateCreateCollectionSql",
+        "toSymbol": "adminFail",
+        "callExpression": "this.adminFail",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "generateDeleteCollectionSql",
+        "toSymbol": "buildPostgresDeleteCollectionSql",
+        "callExpression": "buildPostgresDeleteCollectionSql",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "generateDeleteCollectionSql",
+        "toSymbol": "adminFail",
+        "callExpression": "this.adminFail",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "createCollection",
+        "toSymbol": "generateCreateCollectionSql",
+        "callExpression": "this.generateCreateCollectionSql",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "createCollection",
+        "toSymbol": "executeAdmin",
+        "callExpression": "this.executeAdmin",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "deleteCollection",
+        "toSymbol": "generateDeleteCollectionSql",
+        "callExpression": "this.generateDeleteCollectionSql",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "deleteCollection",
+        "toSymbol": "executeAdmin",
+        "callExpression": "this.executeAdmin",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "connect",
+        "toSymbol": "connect",
+        "callExpression": "this.pool.connect",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "connect",
+        "toSymbol": "fail",
+        "callExpression": "this.fail",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "query",
+        "toSymbol": "queryPostgres",
+        "callExpression": "queryPostgres",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "executeAdmin",
+        "toSymbol": "query",
+        "callExpression": "this.pool.query",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "executeAdmin",
+        "toSymbol": "adminFail",
+        "callExpression": "this.adminFail",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "fail",
+        "toSymbol": "toPostgresAdapterError",
+        "callExpression": "toPostgresAdapterError",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "adminFail",
+        "toSymbol": "toPostgresAdapterError",
+        "callExpression": "toPostgresAdapterError",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "select",
+        "toSymbol": "queryPostgres",
+        "callExpression": "queryPostgres",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "insert",
+        "toSymbol": "queryPostgres",
+        "callExpression": "queryPostgres",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "update",
+        "toSymbol": "queryPostgres",
+        "callExpression": "queryPostgres",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "delete",
+        "toSymbol": "queryPostgres",
+        "callExpression": "queryPostgres",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "findById",
+        "toSymbol": "queryPostgres",
+        "callExpression": "queryPostgres",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "queryPostgres",
+        "toSymbol": "query",
+        "callExpression": "client.query",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "queryPostgres",
+        "toSymbol": "toPostgresAdapterError",
+        "callExpression": "toPostgresAdapterError",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "rollbackIgnoringFailure",
+        "toSymbol": "query",
+        "callExpression": "client.query",
+        "sourcePath": "src/features/postgres/adapters/PostgresDbAdapter.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresDeleteQuery",
+        "toSymbol": "buildPostgresFilters",
+        "callExpression": "buildPostgresFilters",
+        "sourcePath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresDeleteQuery",
+        "toSymbol": "toPostgresTableName",
+        "callExpression": "toPostgresTableName",
+        "sourcePath": "src/features/postgres/queries/buildPostgresDeleteQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresFindByIdQuery",
+        "toSymbol": "buildPostgresSelectQuery",
+        "callExpression": "buildPostgresSelectQuery",
+        "sourcePath": "src/features/postgres/queries/buildPostgresFindByIdQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresInsertQuery",
+        "toSymbol": "toRecords",
+        "callExpression": "toRecords",
+        "sourcePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts"
+      },
+      {
+        "fromSymbol": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "toSymbol": "sameFields",
+        "callExpression": "sameFields",
+        "sourcePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts"
+      },
+      {
+        "fromSymbol": "src/features/postgres/queries/buildPostgresInsertQuery.ts",
+        "toSymbol": "readRecordValue",
+        "callExpression": "readRecordValue",
+        "sourcePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresInsertQuery",
+        "toSymbol": "toPostgresTableName",
+        "callExpression": "toPostgresTableName",
+        "sourcePath": "src/features/postgres/queries/buildPostgresInsertQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresSelectQuery",
+        "toSymbol": "buildPostgresFilters",
+        "callExpression": "buildPostgresFilters",
+        "sourcePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts"
+      },
+      {
+        "fromSymbol": "src/features/postgres/queries/buildPostgresSelectQuery.ts",
+        "toSymbol": "validatePostgresIdentifier",
+        "callExpression": "validatePostgresIdentifier",
+        "sourcePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresSelectQuery",
+        "toSymbol": "positiveInteger",
+        "callExpression": "positiveInteger",
+        "sourcePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresSelectQuery",
+        "toSymbol": "nonNegativeInteger",
+        "callExpression": "nonNegativeInteger",
+        "sourcePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresSelectQuery",
+        "toSymbol": "toPostgresTableName",
+        "callExpression": "toPostgresTableName",
+        "sourcePath": "src/features/postgres/queries/buildPostgresSelectQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresUpdateQuery",
+        "toSymbol": "buildPostgresFilters",
+        "callExpression": "buildPostgresFilters",
+        "sourcePath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresUpdateQuery",
+        "toSymbol": "toPostgresTableName",
+        "callExpression": "toPostgresTableName",
+        "sourcePath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts"
+      },
+      {
+        "fromSymbol": "src/features/postgres/queries/buildPostgresUpdateQuery.ts",
+        "toSymbol": "validatePostgresIdentifier",
+        "callExpression": "validatePostgresIdentifier",
+        "sourcePath": "src/features/postgres/queries/buildPostgresUpdateQuery.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresCreateCollectionSql",
+        "toSymbol": "validatePostgresIdentifier",
+        "callExpression": "validatePostgresIdentifier",
+        "sourcePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresCreateCollectionSql",
+        "toSymbol": "toPostgresTableName",
+        "callExpression": "toPostgresTableName",
+        "sourcePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"
+      },
+      {
+        "fromSymbol": "toFieldSql",
+        "toSymbol": "validatePostgresIdentifier",
+        "callExpression": "validatePostgresIdentifier",
+        "sourcePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"
+      },
+      {
+        "fromSymbol": "toFieldSql",
+        "toSymbol": "toFieldType",
+        "callExpression": "toFieldType",
+        "sourcePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"
+      },
+      {
+        "fromSymbol": "toFieldSql",
+        "toSymbol": "toDefaultValue",
+        "callExpression": "toDefaultValue",
+        "sourcePath": "src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"
+      },
+      {
+        "fromSymbol": "buildPostgresDeleteCollectionSql",
+        "toSymbol": "toPostgresTableName",
+        "callExpression": "toPostgresTableName",
+        "sourcePath": "src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts"
+      },
+      {
+        "fromSymbol": "src/features/postgres/utils/buildPostgresFilters.ts",
+        "toSymbol": "buildCondition",
+        "callExpression": "buildCondition",
+        "sourcePath": "src/features/postgres/utils/buildPostgresFilters.ts"
+      },
+      {
+        "fromSymbol": "buildCondition",
+        "toSymbol": "validatePostgresIdentifier",
+        "callExpression": "validatePostgresIdentifier",
+        "sourcePath": "src/features/postgres/utils/buildPostgresFilters.ts"
+      },
+      {
+        "fromSymbol": "buildCondition",
+        "toSymbol": "buildInCondition",
+        "callExpression": "buildInCondition",
+        "sourcePath": "src/features/postgres/utils/buildPostgresFilters.ts"
+      },
+      {
+        "fromSymbol": "buildCondition",
+        "toSymbol": "toFilterValue",
+        "callExpression": "toFilterValue",
+        "sourcePath": "src/features/postgres/utils/buildPostgresFilters.ts"
+      },
+      {
+        "fromSymbol": "buildCondition",
+        "toSymbol": "toOperator",
+        "callExpression": "toOperator",
+        "sourcePath": "src/features/postgres/utils/buildPostgresFilters.ts"
+      },
+      {
+        "fromSymbol": "toPostgresTableName",
+        "toSymbol": "validatePostgresIdentifier",
+        "callExpression": "validatePostgresIdentifier",
+        "sourcePath": "src/features/postgres/utils/toPostgresTableName.ts"
+      }
+    ],
+    "typeReferences": [
+      {
+        "fromSymbol": "createPostgresAdapter",
+        "toType": "PostgresAdapter",
+        "sourcePath": "src/features/postgres/createPostgresAdapter.ts"
+      },
+      {
+        "fromSymbol": "createPostgresAdapter",
+        "toType": "PostgresAdapterConfig",
+        "sourcePath": "src/features/postgres/createPostgresAdapter.ts"
+      }
+    ],
+    "componentComposition": []
+  }
+}

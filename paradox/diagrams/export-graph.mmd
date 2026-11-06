@@ -1,0 +1,30 @@
+graph LR
+  module_src_features_postgres_adapters_ports_ts["src/features/postgres/adapters/ports.ts"]
+  module_src_features_postgres_adapters_PostgresDbAdapter_ts["src/features/postgres/adapters/PostgresDbAdapter.ts"]
+  module_src_features_postgres_createPostgresAdapter_ts["src/features/postgres/createPostgresAdapter.ts"]
+  module_src_features_postgres_queries_buildPostgresDeleteQuery_ts["src/features/postgres/queries/buildPostgresDeleteQuery.ts"]
+  module_src_features_postgres_queries_buildPostgresFindByIdQuery_ts["src/features/postgres/queries/buildPostgresFindByIdQuery.ts"]
+  module_src_features_postgres_queries_buildPostgresInsertQuery_ts["src/features/postgres/queries/buildPostgresInsertQuery.ts"]
+  module_src_features_postgres_queries_buildPostgresSelectQuery_ts["src/features/postgres/queries/buildPostgresSelectQuery.ts"]
+  module_src_features_postgres_queries_buildPostgresUpdateQuery_ts["src/features/postgres/queries/buildPostgresUpdateQuery.ts"]
+  module_src_features_postgres_queries_types_ts["src/features/postgres/queries/types.ts"]
+  module_src_features_postgres_schema_buildPostgresCreateCollectionSql_ts["src/features/postgres/schema/buildPostgresCreateCollectionSql.ts"]
+  module_src_features_postgres_schema_buildPostgresDeleteCollectionSql_ts["src/features/postgres/schema/buildPostgresDeleteCollectionSql.ts"]
+  module_src_features_postgres_types_ts["src/features/postgres/types.ts"]
+  module_src_features_postgres_utils_buildPostgresFilters_ts["src/features/postgres/utils/buildPostgresFilters.ts"]
+  module_src_features_postgres_utils_toPostgresAdapterError_ts["src/features/postgres/utils/toPostgresAdapterError.ts"]
+  module_src_features_postgres_utils_toPostgresTableName_ts["src/features/postgres/utils/toPostgresTableName.ts"]
+  module_src_features_postgres_utils_validatePostgresIdentifier_ts["src/features/postgres/utils/validatePostgresIdentifier.ts"]
+  module_src_index_ts["src/index.ts"]
+  module_test_index_test_ts["test/index.test.ts"]
+  module_test_postgres_integration_test_ts["test/postgres.integration.test.ts"]
+  export_createPostgresAdapter["createPostgresAdapter"]
+  module_src_features_postgres_createPostgresAdapter_ts --> export_createPostgresAdapter
+  export_createPostgresAdapter -.-> export_PostgresAdapter
+  export_createPostgresAdapter -.-> export_PostgresAdapterConfig
+  export_PostgresAdapter["PostgresAdapter"]
+  module_src_features_postgres_types_ts --> export_PostgresAdapter
+  export_PostgresAdapterConfig["PostgresAdapterConfig"]
+  module_src_features_postgres_types_ts --> export_PostgresAdapterConfig
+  export_PostgresAdapterLifecycle["PostgresAdapterLifecycle"]
+  module_src_features_postgres_types_ts --> export_PostgresAdapterLifecycle

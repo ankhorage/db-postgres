@@ -14,6 +14,8 @@
   },
   "files": [
     "dist",
+    "README.md",
+    "CHANGELOG.md",
     "LICENSE",
     "package.json"
   ],
@@ -22,6 +24,7 @@
     "check-types": "bun x tsc --noEmit -p tsconfig.json",
     "changeset": "ankhorage-changeset",
     "changeset:status": "ankhorage-changeset status --since=origin/main",
+    "docs": "paradox",
     "format": "ankhorage-prettier --write .",
     "format:check": "ankhorage-prettier --check .",
     "knip:check": "ankhorage-knip",
@@ -39,7 +42,8 @@
   },
   "devDependencies": {
     "@ankhorage/devtools": "^2.4.1",
-    "@types/bun": "^1.4.4",
+    "@ankhorage/paradox": "^0.3.6",
+    "@types/bun": "^1.4.2",
     "@types/node": "^26.6.6",
     "@types/pg": "^8.23.1",
     "typescript": "~6.0.3"
@@ -49,6 +53,14 @@
     "access": "public"
   },
   "sideEffects": false,
+  "keywords": [
+    "ankhorage",
+    "database",
+    "postgres",
+    "postgresql",
+    "adapter",
+    "typescript"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ankhorage/db-postgres.git"
