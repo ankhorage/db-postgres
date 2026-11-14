@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "kind": "adapter",
+  "title": "Ankhorage PostgreSQL Database Adapter",
+  "summary": "Provides a PostgreSQL-backed database adapter for the Ankhorage database contracts.",
+  "purpose": "Allow applications to use PostgreSQL through the published database adapter contracts without coupling their core code to the pg client.",
+  "domain": "database persistence",
+  "responsibilities": [
+    "Create a PostgreSQL connection pool from a connection string.",
+    "Adapt PostgreSQL queries and pooled clients to the database adapter contracts.",
+    "Expose lifecycle closure for the created connection pool."
+  ],
+  "boundaries": [
+    "Does not define portable database contracts.",
+    "Does not own application schemas, migrations, or connection-string provisioning.",
+    "Does not expose the pg client as its public package API."
+  ],
+  "audience": [
+    "Application and infrastructure authors that select PostgreSQL for an Ankhorage database adapter."
+  ],
+  "useCases": [
+    "Create a database adapter from a PostgreSQL connection string.",
+    "Run database and administrative operations through the published adapter contracts."
+  ],
+  "architecture": {
+    "role": "Outbound PostgreSQL adapter at the persistence boundary.",
+    "invariants": [
+      "The public adapter implements the published database contracts rather than exposing provider client types.",
+      "An empty connection string is rejected before a pool is created."
+    ]
+  },
+  "implements": [
+    {
+      "packageName": "@ankhorage/contracts",
+      "subpath": "./db",
+      "interfaceId": "DbAdapter"
+    },
+    {
+      "packageName": "@ankhorage/contracts",
+      "subpath": "./db",
+      "interfaceId": "DbAdminAdapter"
+    }
+  ],
+  "constraints": {
+    "configuration": ["A non-empty PostgreSQL connection string is required."],
+    "limitations": [
+      "Availability, authentication, and transport security are provided by the configured PostgreSQL service and pg client."
+    ]
+  }
+}
