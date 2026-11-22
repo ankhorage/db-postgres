@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3
+
+### Patch Changes
+
+- ff568bd: Synchronize managed workflows through the current published Devtools API.
+
 ## 0.1.2
 
 ### Patch Changes
